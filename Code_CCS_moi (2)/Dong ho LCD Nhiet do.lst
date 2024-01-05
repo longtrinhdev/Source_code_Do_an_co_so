@@ -1,0 +1,2877 @@
+CCS PCH C Compiler, Version 5.051, 43599               07-Dec-23 12:04
+
+               Filename:   C:\Users\Admin\Desktop\New_file\Code_CCS\Dong ho LCD Nhiet do.lst
+
+               ROM used:   4908 bytes (15%)
+                           Largest free fragment is 27860
+               RAM used:   36 (2%) at main() level
+                           65 (3%) worst case
+               Stack used: 5 locations
+               Stack size: 31
+
+*
+0000:  GOTO   122A
+.................... #include <18F4550.h> // dinh kem file dinh nghia PIC su dung 
+.................... //////////// Standard Header file for the PIC18F4550 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC18F4550 
+0004:  CLRF   FF7
+0006:  ADDLW  14
+0008:  MOVWF  FF6
+000A:  MOVLW  00
+000C:  ADDWFC FF7,F
+000E:  TBLRD*+
+0010:  MOVF   FF5,W
+0012:  RETURN 0
+0014:  DATA 00,00
+0016:  DATA 03,03
+0018:  DATA 06,01
+001A:  DATA 04,06
+001C:  DATA 02,05
+001E:  DATA 00,03
+0020:  DATA 05,00
+0022:  DATA 4B,48
+0024:  DATA 4F,41
+0026:  DATA 20,44
+0028:  DATA 49,45
+002A:  DATA 4E,20
+002C:  DATA 54,55
+002E:  DATA 00,00
+0030:  DATA 44,4F
+0032:  DATA 20,41
+0034:  DATA 4E,20
+0036:  DATA 43,53
+0038:  DATA 20,4E
+003A:  DATA 48,4F
+003C:  DATA 4D,20
+003E:  DATA 31,30
+0040:  DATA 20,00
+*
+02CE:  TBLRD*+
+02D0:  MOVF   FF5,F
+02D2:  BZ    02EC
+02D4:  MOVFF  FF6,23
+02D8:  MOVFF  FF7,24
+02DC:  MOVFF  FF5,34
+02E0:  RCALL  02BE
+02E2:  MOVFF  23,FF6
+02E6:  MOVFF  24,FF7
+02EA:  BRA    02CE
+02EC:  RETURN 0
+*
+0482:  MOVF   29,W
+0484:  CLRF   01
+0486:  SUBWF  28,W
+0488:  BC    0490
+048A:  MOVFF  28,00
+048E:  BRA    04A8
+0490:  CLRF   00
+0492:  MOVLW  08
+0494:  MOVWF  2A
+0496:  RLCF   28,F
+0498:  RLCF   00,F
+049A:  MOVF   29,W
+049C:  SUBWF  00,W
+049E:  BTFSC  FD8.0
+04A0:  MOVWF  00
+04A2:  RLCF   01,F
+04A4:  DECFSZ 2A,F
+04A6:  BRA    0496
+04A8:  RETURN 0
+*
+051E:  MOVF   34,W
+0520:  BTFSC  FD8.2
+0522:  BRA    0606
+0524:  MOVWF  00
+0526:  MOVF   38,W
+0528:  BTFSC  FD8.2
+052A:  BRA    0606
+052C:  ADDWF  00,F
+052E:  BNC   0538
+0530:  MOVLW  81
+0532:  ADDWF  00,F
+0534:  BC    0606
+0536:  BRA    0540
+0538:  MOVLW  7F
+053A:  SUBWF  00,F
+053C:  BNC   0606
+053E:  BZ    0606
+0540:  MOVFF  35,3C
+0544:  MOVF   39,W
+0546:  XORWF  3C,F
+0548:  BSF    35.7
+054A:  BSF    39.7
+054C:  MOVF   37,W
+054E:  MULWF  3B
+0550:  MOVFF  FF4,3E
+0554:  MOVF   36,W
+0556:  MULWF  3A
+0558:  MOVFF  FF4,03
+055C:  MOVFF  FF3,3D
+0560:  MULWF  3B
+0562:  MOVF   FF3,W
+0564:  ADDWF  3E,F
+0566:  MOVF   FF4,W
+0568:  ADDWFC 3D,F
+056A:  MOVLW  00
+056C:  ADDWFC 03,F
+056E:  MOVF   37,W
+0570:  MULWF  3A
+0572:  MOVF   FF3,W
+0574:  ADDWF  3E,F
+0576:  MOVF   FF4,W
+0578:  ADDWFC 3D,F
+057A:  MOVLW  00
+057C:  CLRF   02
+057E:  ADDWFC 03,F
+0580:  ADDWFC 02,F
+0582:  MOVF   35,W
+0584:  MULWF  3B
+0586:  MOVF   FF3,W
+0588:  ADDWF  3D,F
+058A:  MOVF   FF4,W
+058C:  ADDWFC 03,F
+058E:  MOVLW  00
+0590:  ADDWFC 02,F
+0592:  MOVF   35,W
+0594:  MULWF  3A
+0596:  MOVF   FF3,W
+0598:  ADDWF  03,F
+059A:  MOVF   FF4,W
+059C:  ADDWFC 02,F
+059E:  MOVLW  00
+05A0:  CLRF   01
+05A2:  ADDWFC 01,F
+05A4:  MOVF   37,W
+05A6:  MULWF  39
+05A8:  MOVF   FF3,W
+05AA:  ADDWF  3D,F
+05AC:  MOVF   FF4,W
+05AE:  ADDWFC 03,F
+05B0:  MOVLW  00
+05B2:  ADDWFC 02,F
+05B4:  ADDWFC 01,F
+05B6:  MOVF   36,W
+05B8:  MULWF  39
+05BA:  MOVF   FF3,W
+05BC:  ADDWF  03,F
+05BE:  MOVF   FF4,W
+05C0:  ADDWFC 02,F
+05C2:  MOVLW  00
+05C4:  ADDWFC 01,F
+05C6:  MOVF   35,W
+05C8:  MULWF  39
+05CA:  MOVF   FF3,W
+05CC:  ADDWF  02,F
+05CE:  MOVF   FF4,W
+05D0:  ADDWFC 01,F
+05D2:  INCF   00,F
+05D4:  BTFSC  01.7
+05D6:  BRA    05E2
+05D8:  RLCF   3D,F
+05DA:  RLCF   03,F
+05DC:  RLCF   02,F
+05DE:  RLCF   01,F
+05E0:  DECF   00,F
+05E2:  MOVLW  00
+05E4:  BTFSS  3D.7
+05E6:  BRA    05FC
+05E8:  INCF   03,F
+05EA:  ADDWFC 02,F
+05EC:  ADDWFC 01,F
+05EE:  MOVF   01,W
+05F0:  BNZ   05FC
+05F2:  MOVF   02,W
+05F4:  BNZ   05FC
+05F6:  MOVF   03,W
+05F8:  BNZ   05FC
+05FA:  INCF   00,F
+05FC:  BTFSC  3C.7
+05FE:  BSF    01.7
+0600:  BTFSS  3C.7
+0602:  BCF    01.7
+0604:  BRA    060E
+0606:  CLRF   00
+0608:  CLRF   01
+060A:  CLRF   02
+060C:  CLRF   03
+060E:  RETURN 0
+0610:  MOVF   34,W
+0612:  SUBLW  B6
+0614:  MOVWF  34
+0616:  CLRF   03
+0618:  MOVFF  35,38
+061C:  BSF    35.7
+061E:  BCF    FD8.0
+0620:  RRCF   35,F
+0622:  RRCF   36,F
+0624:  RRCF   37,F
+0626:  RRCF   03,F
+0628:  RRCF   02,F
+062A:  RRCF   01,F
+062C:  RRCF   00,F
+062E:  DECFSZ 34,F
+0630:  BRA    061E
+0632:  BTFSS  38.7
+0634:  BRA    064C
+0636:  COMF   00,F
+0638:  COMF   01,F
+063A:  COMF   02,F
+063C:  COMF   03,F
+063E:  INCF   00,F
+0640:  BTFSC  FD8.2
+0642:  INCF   01,F
+0644:  BTFSC  FD8.2
+0646:  INCF   02,F
+0648:  BTFSC  FD8.2
+064A:  INCF   03,F
+064C:  GOTO   072C (RETURN)
+0650:  BTFSC  FD8.1
+0652:  BRA    065A
+0654:  CLRF   FEA
+0656:  MOVLW  3C
+0658:  MOVWF  FE9
+065A:  CLRF   00
+065C:  CLRF   01
+065E:  CLRF   02
+0660:  CLRF   03
+0662:  CLRF   3C
+0664:  CLRF   3D
+0666:  CLRF   3E
+0668:  CLRF   3F
+066A:  MOVF   3B,W
+066C:  IORWF  3A,W
+066E:  IORWF  39,W
+0670:  IORWF  38,W
+0672:  BZ    06CC
+0674:  MOVLW  20
+0676:  MOVWF  40
+0678:  BCF    FD8.0
+067A:  RLCF   34,F
+067C:  RLCF   35,F
+067E:  RLCF   36,F
+0680:  RLCF   37,F
+0682:  RLCF   3C,F
+0684:  RLCF   3D,F
+0686:  RLCF   3E,F
+0688:  RLCF   3F,F
+068A:  MOVF   3B,W
+068C:  SUBWF  3F,W
+068E:  BNZ   06A0
+0690:  MOVF   3A,W
+0692:  SUBWF  3E,W
+0694:  BNZ   06A0
+0696:  MOVF   39,W
+0698:  SUBWF  3D,W
+069A:  BNZ   06A0
+069C:  MOVF   38,W
+069E:  SUBWF  3C,W
+06A0:  BNC   06C0
+06A2:  MOVF   38,W
+06A4:  SUBWF  3C,F
+06A6:  MOVF   39,W
+06A8:  BTFSS  FD8.0
+06AA:  INCFSZ 39,W
+06AC:  SUBWF  3D,F
+06AE:  MOVF   3A,W
+06B0:  BTFSS  FD8.0
+06B2:  INCFSZ 3A,W
+06B4:  SUBWF  3E,F
+06B6:  MOVF   3B,W
+06B8:  BTFSS  FD8.0
+06BA:  INCFSZ 3B,W
+06BC:  SUBWF  3F,F
+06BE:  BSF    FD8.0
+06C0:  RLCF   00,F
+06C2:  RLCF   01,F
+06C4:  RLCF   02,F
+06C6:  RLCF   03,F
+06C8:  DECFSZ 40,F
+06CA:  BRA    0678
+06CC:  MOVFF  3C,FEF
+06D0:  MOVFF  3D,FEC
+06D4:  MOVFF  3E,FEC
+06D8:  MOVFF  3F,FEC
+06DC:  RETURN 0
+06DE:  MOVF   FE9,W
+06E0:  MOVWF  2C
+06E2:  MOVF   2B,W
+06E4:  MOVWF  2E
+06E6:  BZ    071A
+06E8:  MOVFF  2A,37
+06EC:  MOVFF  29,36
+06F0:  MOVFF  28,35
+06F4:  MOVFF  27,34
+06F8:  CLRF   3B
+06FA:  CLRF   3A
+06FC:  MOVLW  20
+06FE:  MOVWF  39
+0700:  MOVLW  82
+0702:  MOVWF  38
+0704:  RCALL  051E
+0706:  MOVFF  03,2A
+070A:  MOVFF  02,29
+070E:  MOVFF  01,28
+0712:  MOVFF  00,27
+0716:  DECFSZ 2E,F
+0718:  BRA    06E8
+071A:  MOVFF  2A,37
+071E:  MOVFF  29,36
+0722:  MOVFF  28,35
+0726:  MOVFF  27,34
+072A:  BRA    0610
+072C:  MOVFF  03,2A
+0730:  MOVFF  02,29
+0734:  MOVFF  01,28
+0738:  MOVFF  00,27
+073C:  BTFSS  2A.7
+073E:  BRA    075A
+0740:  DECF   2C,F
+0742:  BSF    2C.5
+0744:  COMF   27,F
+0746:  COMF   28,F
+0748:  COMF   29,F
+074A:  COMF   2A,F
+074C:  INCF   27,F
+074E:  BTFSC  FD8.2
+0750:  INCF   28,F
+0752:  BTFSC  FD8.2
+0754:  INCF   29,F
+0756:  BTFSC  FD8.2
+0758:  INCF   2A,F
+075A:  MOVLW  3B
+075C:  MOVWF  33
+075E:  MOVLW  9A
+0760:  MOVWF  32
+0762:  MOVLW  CA
+0764:  MOVWF  31
+0766:  CLRF   30
+0768:  MOVLW  0A
+076A:  MOVWF  2E
+076C:  MOVF   2B,W
+076E:  BTFSC  FD8.2
+0770:  INCF   2C,F
+0772:  BSF    FD8.1
+0774:  CLRF   FEA
+0776:  MOVLW  27
+0778:  MOVWF  FE9
+077A:  MOVFF  2A,37
+077E:  MOVFF  29,36
+0782:  MOVFF  28,35
+0786:  MOVFF  27,34
+078A:  MOVFF  33,3B
+078E:  MOVFF  32,3A
+0792:  MOVFF  31,39
+0796:  MOVFF  30,38
+079A:  RCALL  0650
+079C:  MOVF   01,W
+079E:  MOVF   00,F
+07A0:  BNZ   07C0
+07A2:  INCF   2B,W
+07A4:  SUBWF  2E,W
+07A6:  BZ    07C0
+07A8:  MOVF   2C,W
+07AA:  BZ    07C4
+07AC:  ANDLW  0F
+07AE:  SUBWF  2E,W
+07B0:  BZ    07B4
+07B2:  BC    0822
+07B4:  BTFSC  2C.7
+07B6:  BRA    0822
+07B8:  BTFSC  2C.6
+07BA:  BRA    07C4
+07BC:  MOVLW  20
+07BE:  BRA    081A
+07C0:  MOVLW  20
+07C2:  ANDWF  2C,F
+07C4:  BTFSS  2C.5
+07C6:  BRA    07E0
+07C8:  BCF    2C.5
+07CA:  MOVF   2B,W
+07CC:  BTFSS  FD8.2
+07CE:  DECF   2C,F
+07D0:  MOVF   00,W
+07D2:  MOVWF  2C
+07D4:  MOVLW  2D
+07D6:  MOVWF  34
+07D8:  RCALL  02BE
+07DA:  MOVF   2C,W
+07DC:  MOVWF  00
+07DE:  CLRF   2C
+07E0:  MOVF   2B,W
+07E2:  SUBWF  2E,W
+07E4:  BNZ   07FA
+07E6:  MOVF   00,W
+07E8:  MOVWF  2C
+07EA:  MOVLW  2E
+07EC:  MOVWF  34
+07EE:  RCALL  02BE
+07F0:  MOVF   2C,W
+07F2:  MOVWF  00
+07F4:  MOVLW  20
+07F6:  ANDWF  2C,F
+07F8:  MOVLW  00
+07FA:  MOVLW  30
+07FC:  BTFSS  2C.5
+07FE:  BRA    081A
+0800:  BCF    2C.5
+0802:  MOVF   2B,W
+0804:  BTFSS  FD8.2
+0806:  DECF   2C,F
+0808:  MOVF   00,W
+080A:  MOVWF  2C
+080C:  MOVLW  2D
+080E:  MOVWF  34
+0810:  RCALL  02BE
+0812:  MOVF   2C,W
+0814:  MOVWF  00
+0816:  CLRF   2C
+0818:  MOVLW  30
+081A:  ADDWF  00,F
+081C:  MOVFF  00,34
+0820:  RCALL  02BE
+0822:  BCF    FD8.1
+0824:  MOVFF  33,37
+0828:  MOVFF  32,36
+082C:  MOVFF  31,35
+0830:  MOVFF  30,34
+0834:  CLRF   3B
+0836:  CLRF   3A
+0838:  CLRF   39
+083A:  MOVLW  0A
+083C:  MOVWF  38
+083E:  RCALL  0650
+0840:  MOVFF  03,33
+0844:  MOVFF  02,32
+0848:  MOVFF  01,31
+084C:  MOVFF  00,30
+0850:  DECFSZ 2E,F
+0852:  BRA    0772
+0854:  GOTO   09F2 (RETURN)
+*
+0A90:  MOVLW  8E
+0A92:  MOVWF  00
+0A94:  MOVFF  2D,01
+0A98:  MOVFF  2C,02
+0A9C:  CLRF   03
+0A9E:  MOVF   01,F
+0AA0:  BNZ   0AB4
+0AA2:  MOVFF  02,01
+0AA6:  CLRF   02
+0AA8:  MOVLW  08
+0AAA:  SUBWF  00,F
+0AAC:  MOVF   01,F
+0AAE:  BNZ   0AB4
+0AB0:  CLRF   00
+0AB2:  BRA    0AC4
+0AB4:  BCF    FD8.0
+0AB6:  BTFSC  01.7
+0AB8:  BRA    0AC2
+0ABA:  RLCF   02,F
+0ABC:  RLCF   01,F
+0ABE:  DECF   00,F
+0AC0:  BRA    0AB4
+0AC2:  BCF    01.7
+0AC4:  RETURN 0
+0AC6:  MOVF   2C,W
+0AC8:  BTFSC  FD8.2
+0ACA:  BRA    0C16
+0ACC:  MOVWF  38
+0ACE:  MOVF   30,W
+0AD0:  BTFSC  FD8.2
+0AD2:  BRA    0C16
+0AD4:  SUBWF  38,F
+0AD6:  BNC   0AE2
+0AD8:  MOVLW  7F
+0ADA:  ADDWF  38,F
+0ADC:  BTFSC  FD8.0
+0ADE:  BRA    0C16
+0AE0:  BRA    0AEE
+0AE2:  MOVLW  81
+0AE4:  SUBWF  38,F
+0AE6:  BTFSS  FD8.0
+0AE8:  BRA    0C16
+0AEA:  BTFSC  FD8.2
+0AEC:  BRA    0C16
+0AEE:  MOVFF  38,00
+0AF2:  CLRF   01
+0AF4:  CLRF   02
+0AF6:  CLRF   03
+0AF8:  CLRF   37
+0AFA:  MOVFF  2D,36
+0AFE:  BSF    36.7
+0B00:  MOVFF  2E,35
+0B04:  MOVFF  2F,34
+0B08:  MOVLW  19
+0B0A:  MOVWF  38
+0B0C:  MOVF   33,W
+0B0E:  SUBWF  34,F
+0B10:  BC    0B2C
+0B12:  MOVLW  01
+0B14:  SUBWF  35,F
+0B16:  BC    0B2C
+0B18:  SUBWF  36,F
+0B1A:  BC    0B2C
+0B1C:  SUBWF  37,F
+0B1E:  BC    0B2C
+0B20:  INCF   37,F
+0B22:  INCF   36,F
+0B24:  INCF   35,F
+0B26:  MOVF   33,W
+0B28:  ADDWF  34,F
+0B2A:  BRA    0B7C
+0B2C:  MOVF   32,W
+0B2E:  SUBWF  35,F
+0B30:  BC    0B56
+0B32:  MOVLW  01
+0B34:  SUBWF  36,F
+0B36:  BC    0B56
+0B38:  SUBWF  37,F
+0B3A:  BC    0B56
+0B3C:  INCF   37,F
+0B3E:  INCF   36,F
+0B40:  MOVF   32,W
+0B42:  ADDWF  35,F
+0B44:  MOVF   33,W
+0B46:  ADDWF  34,F
+0B48:  BNC   0B7C
+0B4A:  INCF   35,F
+0B4C:  BNZ   0B7C
+0B4E:  INCF   36,F
+0B50:  BNZ   0B7C
+0B52:  INCF   37,F
+0B54:  BRA    0B7C
+0B56:  MOVF   31,W
+0B58:  IORLW  80
+0B5A:  SUBWF  36,F
+0B5C:  BC    0B7A
+0B5E:  MOVLW  01
+0B60:  SUBWF  37,F
+0B62:  BC    0B7A
+0B64:  INCF   37,F
+0B66:  MOVF   31,W
+0B68:  IORLW  80
+0B6A:  ADDWF  36,F
+0B6C:  MOVF   32,W
+0B6E:  ADDWF  35,F
+0B70:  BNC   0B44
+0B72:  INCF   36,F
+0B74:  BNZ   0B44
+0B76:  INCF   37,F
+0B78:  BRA    0B44
+0B7A:  BSF    03.0
+0B7C:  DECFSZ 38,F
+0B7E:  BRA    0B82
+0B80:  BRA    0B98
+0B82:  BCF    FD8.0
+0B84:  RLCF   34,F
+0B86:  RLCF   35,F
+0B88:  RLCF   36,F
+0B8A:  RLCF   37,F
+0B8C:  BCF    FD8.0
+0B8E:  RLCF   03,F
+0B90:  RLCF   02,F
+0B92:  RLCF   01,F
+0B94:  RLCF   39,F
+0B96:  BRA    0B0C
+0B98:  BTFSS  39.0
+0B9A:  BRA    0BA8
+0B9C:  BCF    FD8.0
+0B9E:  RRCF   01,F
+0BA0:  RRCF   02,F
+0BA2:  RRCF   03,F
+0BA4:  RRCF   39,F
+0BA6:  BRA    0BAC
+0BA8:  DECF   00,F
+0BAA:  BZ    0C16
+0BAC:  BTFSC  39.7
+0BAE:  BRA    0BEC
+0BB0:  BCF    FD8.0
+0BB2:  RLCF   34,F
+0BB4:  RLCF   35,F
+0BB6:  RLCF   36,F
+0BB8:  RLCF   37,F
+0BBA:  MOVF   33,W
+0BBC:  SUBWF  34,F
+0BBE:  BC    0BCE
+0BC0:  MOVLW  01
+0BC2:  SUBWF  35,F
+0BC4:  BC    0BCE
+0BC6:  SUBWF  36,F
+0BC8:  BC    0BCE
+0BCA:  SUBWF  37,F
+0BCC:  BNC   0C02
+0BCE:  MOVF   32,W
+0BD0:  SUBWF  35,F
+0BD2:  BC    0BDE
+0BD4:  MOVLW  01
+0BD6:  SUBWF  36,F
+0BD8:  BC    0BDE
+0BDA:  SUBWF  37,F
+0BDC:  BNC   0C02
+0BDE:  MOVF   31,W
+0BE0:  IORLW  80
+0BE2:  SUBWF  36,F
+0BE4:  BC    0BEC
+0BE6:  MOVLW  01
+0BE8:  SUBWF  37,F
+0BEA:  BNC   0C02
+0BEC:  INCF   03,F
+0BEE:  BNZ   0C02
+0BF0:  INCF   02,F
+0BF2:  BNZ   0C02
+0BF4:  INCF   01,F
+0BF6:  BNZ   0C02
+0BF8:  INCF   00,F
+0BFA:  BZ    0C16
+0BFC:  RRCF   01,F
+0BFE:  RRCF   02,F
+0C00:  RRCF   03,F
+0C02:  MOVFF  2D,38
+0C06:  MOVF   31,W
+0C08:  XORWF  38,F
+0C0A:  BTFSS  38.7
+0C0C:  BRA    0C12
+0C0E:  BSF    01.7
+0C10:  BRA    0C1E
+0C12:  BCF    01.7
+0C14:  BRA    0C1E
+0C16:  CLRF   00
+0C18:  CLRF   01
+0C1A:  CLRF   02
+0C1C:  CLRF   03
+0C1E:  RETURN 0
+0C20:  MOVLW  8E
+0C22:  MOVWF  00
+0C24:  MOVF   2C,W
+0C26:  SUBWF  00,F
+0C28:  MOVFF  2D,02
+0C2C:  MOVFF  2E,01
+0C30:  BSF    02.7
+0C32:  MOVF   00,F
+0C34:  BZ    0C48
+0C36:  BCF    FD8.0
+0C38:  MOVF   02,F
+0C3A:  BNZ   0C40
+0C3C:  MOVF   01,F
+0C3E:  BZ    0C48
+0C40:  RRCF   02,F
+0C42:  RRCF   01,F
+0C44:  DECFSZ 00,F
+0C46:  BRA    0C36
+0C48:  BTFSS  2D.7
+0C4A:  BRA    0C56
+0C4C:  COMF   01,F
+0C4E:  COMF   02,F
+0C50:  INCF   01,F
+0C52:  BTFSC  FD8.2
+0C54:  INCF   02,F
+0C56:  GOTO   0D2A (RETURN)
+*
+11DE:  ADDWF  FE8,W
+11E0:  CLRF   FF7
+11E2:  RLCF   FF7,F
+11E4:  ADDLW  F9
+11E6:  MOVWF  FF6
+11E8:  MOVLW  11
+11EA:  ADDWFC FF7,F
+11EC:  TBLRD*-
+11EE:  MOVF   FF5,W
+11F0:  MOVWF  FFA
+11F2:  TBLRD*
+11F4:  MOVF   FF5,W
+11F6:  MOVWF  FF9
+11F8:  DATA 9C,0E
+11FA:  DATA D4,0E
+11FC:  DATA 0C,0F
+11FE:  DATA 44,0F
+1200:  DATA 7E,0F
+1202:  DATA B8,0F
+1204:  ADDWF  FE8,W
+1206:  CLRF   FF7
+1208:  RLCF   FF7,F
+120A:  ADDLW  1F
+120C:  MOVWF  FF6
+120E:  MOVLW  12
+1210:  ADDWFC FF7,F
+1212:  TBLRD*-
+1214:  MOVF   FF5,W
+1216:  MOVWF  FFA
+1218:  TBLRD*
+121A:  MOVF   FF5,W
+121C:  MOVWF  FF9
+121E:  DATA 0C,10
+1220:  DATA 44,10
+1222:  DATA 7C,10
+1224:  DATA B4,10
+1226:  DATA EE,10
+1228:  DATA 28,11
+....................  
+.................... #list 
+....................  
+.................... #FUSES hs // su dung giao dong thach anh ngoài  
+.................... #FUSES PLL1,NOUSBDIV,NOWDT,NOIESO,MCLR,CPUDIV1 
+....................  
+.................... #use delay(clock=12000000) // khai bao tan so thach anh cho hàm delay                             
+*
+0074:  CLRF   FEA
+0076:  MOVLW  36
+0078:  MOVWF  FE9
+007A:  MOVF   FEF,W
+007C:  BZ    009A
+007E:  MOVLW  03
+0080:  MOVWF  01
+0082:  CLRF   00
+0084:  DECFSZ 00,F
+0086:  BRA    0084
+0088:  DECFSZ 01,F
+008A:  BRA    0082
+008C:  MOVLW  E3
+008E:  MOVWF  00
+0090:  DECFSZ 00,F
+0092:  BRA    0090
+0094:  NOP   
+0096:  DECFSZ FEF,F
+0098:  BRA    007E
+009A:  RETURN 0
+*
+09FA:  MOVLW  05
+09FC:  SUBWF  2D,F
+09FE:  BNC   0A10
+0A00:  CLRF   FEA
+0A02:  MOVLW  2D
+0A04:  MOVWF  FE9
+0A06:  MOVF   FEF,W
+0A08:  BZ    0A10
+0A0A:  BRA    0A0C
+0A0C:  DECFSZ FEF,F
+0A0E:  BRA    0A0C
+0A10:  GOTO   0A22 (RETURN)
+.................... #use i2c(sda = pin_c6,scl = pin_c7) // su dung giao tiep i2c cho DS1307  
+*
+010A:  MOVLW  08
+010C:  MOVWF  01
+010E:  MOVLW  02
+0110:  MOVWF  00
+0112:  DECFSZ 00,F
+0114:  BRA    0112
+0116:  BCF    F8B.7
+0118:  BCF    F94.7
+011A:  MOVLW  02
+011C:  MOVWF  00
+011E:  DECFSZ 00,F
+0120:  BRA    011E
+0122:  RLCF   29,F
+0124:  BCF    F8B.6
+0126:  BTFSC  FD8.0
+0128:  BSF    F94.6
+012A:  BTFSS  FD8.0
+012C:  BCF    F94.6
+012E:  BSF    F94.7
+0130:  BTFSS  F82.7
+0132:  BRA    0130
+0134:  DECFSZ 01,F
+0136:  BRA    010E
+0138:  MOVLW  02
+013A:  MOVWF  00
+013C:  DECFSZ 00,F
+013E:  BRA    013C
+0140:  BCF    F8B.7
+0142:  BCF    F94.7
+0144:  NOP   
+0146:  BSF    F94.6
+0148:  MOVLW  02
+014A:  MOVWF  00
+014C:  DECFSZ 00,F
+014E:  BRA    014C
+0150:  MOVLW  02
+0152:  MOVWF  00
+0154:  DECFSZ 00,F
+0156:  BRA    0154
+0158:  BSF    F94.7
+015A:  BTFSS  F82.7
+015C:  BRA    015A
+015E:  CLRF   01
+0160:  MOVLW  02
+0162:  MOVWF  00
+0164:  DECFSZ 00,F
+0166:  BRA    0164
+0168:  BTFSC  F82.6
+016A:  BSF    01.0
+016C:  BCF    F8B.7
+016E:  BCF    F94.7
+0170:  BCF    F8B.6
+0172:  BCF    F94.6
+0174:  RETURN 0
+0176:  MOVLW  08
+0178:  MOVWF  2B
+017A:  MOVFF  00,2C
+017E:  BSF    F94.6
+0180:  MOVLW  02
+0182:  MOVWF  00
+0184:  DECFSZ 00,F
+0186:  BRA    0184
+0188:  BSF    F94.7
+018A:  BTFSS  F82.7
+018C:  BRA    018A
+018E:  BTFSC  F82.6
+0190:  BSF    FD8.0
+0192:  BTFSS  F82.6
+0194:  BCF    FD8.0
+0196:  RLCF   01,F
+0198:  MOVLW  02
+019A:  MOVWF  00
+019C:  DECFSZ 00,F
+019E:  BRA    019C
+01A0:  BCF    F94.7
+01A2:  BCF    F8B.7
+01A4:  DECFSZ 2B,F
+01A6:  BRA    017E
+01A8:  BSF    F94.6
+01AA:  MOVLW  02
+01AC:  MOVWF  00
+01AE:  DECFSZ 00,F
+01B0:  BRA    01AE
+01B2:  BCF    F8B.6
+01B4:  MOVF   2C,W
+01B6:  BTFSS  FD8.2
+01B8:  BCF    F94.6
+01BA:  NOP   
+01BC:  BSF    F94.7
+01BE:  BTFSS  F82.7
+01C0:  BRA    01BE
+01C2:  MOVLW  02
+01C4:  MOVWF  00
+01C6:  DECFSZ 00,F
+01C8:  BRA    01C6
+01CA:  BCF    F8B.7
+01CC:  BCF    F94.7
+01CE:  MOVLW  02
+01D0:  MOVWF  00
+01D2:  DECFSZ 00,F
+01D4:  BRA    01D2
+01D6:  BCF    F8B.6
+01D8:  BCF    F94.6
+01DA:  RETURN 0
+.................... #define LCD_RS PIN_D2 
+.................... #include <LCD 4 bit.c> // Dinh kem file giao tiep LCD che do 4 BIT    
+.................... #include <stddef.h>    
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996,2003 Custom Computer Services           //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+....................  
+.................... #ifndef _STDDEF 
+....................  
+.................... #define _STDDEF 
+....................  
+.................... #if sizeof(unsigned int8 *)==1 
+.................... #define ptrdiff_t unsigned int8 
+.................... #else 
+.................... #define ptrdiff_t unsigned int16 
+.................... #endif 
+....................  
+.................... #if defined(__PCB__) || defined(__PCM__) 
+.................... #define size_t unsigned int8 
+.................... #else 
+.................... #define size_t unsigned int16 
+.................... #endif 
+.................... #define wchar_t char 
+.................... #define NULL 0 
+....................  
+.................... #define offsetof(s,f) (offsetofbit(s,f)/8) 
+....................  
+.................... #endif 
+....................  
+....................     
+.................... #define LCD_RS          PIN_D2     
+.................... #define LCD_EN          PIN_D1   
+....................     
+.................... #define LCD_D4          PIN_D0    
+.................... #define LCD_D5          PIN_C2   
+.................... #define LCD_D6          PIN_C1                              
+.................... #define LCD_D7          PIN_C0    
+....................     
+.................... // misc display defines-    
+.................... #define Line_1          0x80    
+.................... #define Line_2          0xC0    
+.................... #define Clear_Scr       0x01    
+....................     
+.................... // prototype statements    
+.................... #separate void LCD_Init ( void );// ham khoi tao LCD    
+.................... #separate void LCD_SetPosition ( unsigned int cX );//Thiet lap vi tri con tro    
+.................... #separate void LCD_PutChar ( unsigned int cX );// Ham viet1kitu/1chuoi len LCD    
+.................... #separate void LCD_PutCmd ( unsigned int cX) ;// Ham gui lenh len LCD    
+.................... #separate void LCD_PulseEnable ( void );// Xung kich hoat    
+.................... #separate void LCD_SetData ( unsigned int cX );// Dat du lieu len chan Data    
+.................... // D/n Cong    
+.................... #use standard_io (C)    
+.................... #use standard_io (D)    
+....................     
+.................... //khoi tao LCD**********************************************    
+.................... #separate void LCD_Init ( void )    
+....................     {    
+....................     LCD_SetData ( 0x00 );    
+*
+00CC:  CLRF   36
+00CE:  RCALL  0042
+....................     delay_ms(200);       /* wait enough time after Vdd rise >> 15ms */    
+00D0:  MOVLW  C8
+00D2:  MOVWF  36
+00D4:  RCALL  0074
+....................     output_low ( LCD_RS );// che do gui lenh    
+00D6:  BCF    F95.2
+00D8:  BCF    F8C.2
+....................     LCD_SetData ( 0x03 );   /* init with specific nibbles to start 4-bit mode */    
+00DA:  MOVLW  03
+00DC:  MOVWF  36
+00DE:  RCALL  0042
+....................     LCD_PulseEnable();    
+00E0:  RCALL  009C
+....................     LCD_PulseEnable();    
+00E2:  RCALL  009C
+....................     LCD_PulseEnable();    
+00E4:  RCALL  009C
+....................     LCD_SetData ( 0x02 );   /* set 4-bit interface */    
+00E6:  MOVLW  02
+00E8:  MOVWF  36
+00EA:  RCALL  0042
+....................     LCD_PulseEnable();      /* send dual nibbles hereafter, MSN first */    
+00EC:  RCALL  009C
+....................     LCD_PutCmd ( 0x2C );    /* function set (all lines, 5x7 characters) */    
+00EE:  MOVLW  2C
+00F0:  MOVWF  35
+00F2:  RCALL  00B6
+....................     LCD_PutCmd ( 0x0C );    /* display ON, cursor off, no blink */    
+00F4:  MOVLW  0C
+00F6:  MOVWF  35
+00F8:  RCALL  00B6
+....................     LCD_PutCmd ( 0x06 );    /* entry mode set, increment & scroll left */    
+00FA:  MOVLW  06
+00FC:  MOVWF  35
+00FE:  RCALL  00B6
+....................     LCD_PutCmd ( 0x01 );    /* clear display */    
+0100:  MOVLW  01
+0102:  MOVWF  35
+0104:  RCALL  00B6
+0106:  GOTO   124C (RETURN)
+....................     }    
+....................     
+.................... #separate void LCD_SetPosition ( unsigned int cX )    
+....................     {    
+....................     /* this subroutine works specifically for 4-bit Port A */    
+....................     LCD_SetData ( swap ( cX ) | 0x08 );    
+....................     LCD_PulseEnable();    
+....................     LCD_SetData ( swap ( cX ) );    
+....................     LCD_PulseEnable();    
+....................     }    
+....................     
+.................... #separate void LCD_PutChar ( unsigned int cX )    
+....................     {    
+....................     /* this subroutine works specifically for 4-bit Port A */    
+....................         output_high ( LCD_RS );    
+*
+02BE:  BCF    F95.2
+02C0:  BSF    F8C.2
+....................         LCD_PutCmd( cX );    
+02C2:  MOVFF  34,35
+02C6:  RCALL  00B6
+....................         output_low ( LCD_RS );    
+02C8:  BCF    F95.2
+02CA:  BCF    F8C.2
+02CC:  RETURN 0
+....................     }    
+....................     
+.................... #separate void LCD_PutCmd ( unsigned int cX )    
+....................     {    
+....................     /* this subroutine works specifically for 4-bit Port A */    
+....................     LCD_SetData ( swap ( cX ) );     /* send high nibble */    
+*
+00B6:  SWAPF  35,F
+00B8:  MOVFF  35,36
+00BC:  RCALL  0042
+....................     LCD_PulseEnable();    
+00BE:  RCALL  009C
+....................     LCD_SetData ( swap ( cX ) );     /* send low nibble */    
+00C0:  SWAPF  35,F
+00C2:  MOVFF  35,36
+00C6:  RCALL  0042
+....................     LCD_PulseEnable();    
+00C8:  RCALL  009C
+00CA:  RETURN 0
+....................     }    
+.................... #separate void LCD_PulseEnable ( void )    
+....................     {    
+....................     output_high ( LCD_EN );    
+*
+009C:  BCF    F95.1
+009E:  BSF    F8C.1
+....................     delay_us ( 3 );         // was 10    
+00A0:  MOVLW  02
+00A2:  MOVWF  00
+00A4:  DECFSZ 00,F
+00A6:  BRA    00A4
+00A8:  BRA    00AA
+....................     output_low ( LCD_EN );    
+00AA:  BCF    F95.1
+00AC:  BCF    F8C.1
+....................     delay_ms ( 3 );         // was 5    
+00AE:  MOVLW  03
+00B0:  MOVWF  36
+00B2:  RCALL  0074
+00B4:  RETURN 0
+....................     }    
+....................     
+.................... #separate void LCD_SetData ( unsigned int cX )    
+....................     {    
+....................     output_bit ( LCD_D4, cX & 0x01 );    
+*
+0042:  BTFSC  36.0
+0044:  BRA    004A
+0046:  BCF    F8C.0
+0048:  BRA    004C
+004A:  BSF    F8C.0
+004C:  BCF    F95.0
+....................     output_bit ( LCD_D5, cX & 0x02 );    
+004E:  BTFSC  36.1
+0050:  BRA    0056
+0052:  BCF    F8B.2
+0054:  BRA    0058
+0056:  BSF    F8B.2
+0058:  BCF    F94.2
+....................     output_bit ( LCD_D6, cX & 0x04 );    
+005A:  BTFSC  36.2
+005C:  BRA    0062
+005E:  BCF    F8B.1
+0060:  BRA    0064
+0062:  BSF    F8B.1
+0064:  BCF    F94.1
+....................     output_bit ( LCD_D7, cX & 0x08 );    
+0066:  BTFSC  36.3
+0068:  BRA    006E
+006A:  BCF    F8B.0
+006C:  BRA    0070
+006E:  BSF    F8B.0
+0070:  BCF    F94.0
+0072:  RETURN 0
+....................     }    
+....................  
+....................                                                                         
+.................... #define k1 pin_B0 // nut nhan set thoi gian                       
+.................... #define k2 pin_B1 // nut nhan tang                                                                                                                                                                                                             
+.................... #define k3 pin_B2 // nut nhan giam                                                                     
+....................                                                                                
+....................                                                                                                    
+.................... #define led pin_a0                              
+....................                                       
+.................... #define ONE_WIRE_PIN PIN_D3 
+.................... #include<1wire.c> //truy xuat vao file 1wire                  
+.................... /*-------Dinh nghia one-wire-------*/  
+.................... #ifndef ONE_WIRE_PIN 
+.................... #define ONE_WIRE_PIN PIN_D3   
+.................... #endif 
+....................  
+.................... void onewire_reset()  // reset one wire  
+.................... {  
+....................  output_low(ONE_WIRE_PIN);  
+*
+0A14:  BCF    F95.3
+0A16:  BCF    F8C.3
+....................  delay_us( 500 ); // keo 1-wire xuong thap de reset       
+0A18:  MOVLW  02
+0A1A:  MOVWF  2C
+0A1C:  MOVLW  F9
+0A1E:  MOVWF  2D
+0A20:  BRA    09FA
+0A22:  DECFSZ 2C,F
+0A24:  BRA    0A1C
+....................  output_float(ONE_WIRE_PIN); // tha 1-wire len muc cao 
+0A26:  BSF    F95.3
+....................  delay_us( 250 ); // cho 1-wire san sang 
+0A28:  MOVLW  F9
+0A2A:  MOVWF  00
+0A2C:  DECFSZ 00,F
+0A2E:  BRA    0A2C
+0A30:  BRA    0A32
+0A32:  RETURN 0
+.................... }                                                                                      
+.................... //==================== 
+.................... //Ghi vao 1 wire 
+.................... void ghi_1wire(int data)  
+.................... {  
+....................  int dem; // khai bao bien dem  
+....................  for (dem=0; dem<8; ++dem) // Lap lai 8 lan 
+0A34:  CLRF   2D
+0A36:  MOVF   2D,W
+0A38:  SUBLW  07
+0A3A:  BNC   0A5E
+....................  {  
+....................   output_low(ONE_WIRE_PIN); // dua chan 1 wire xuong thap  
+0A3C:  BCF    F95.3
+0A3E:  BCF    F8C.3
+....................   output_bit(ONE_WIRE_PIN, shift_right(&data,1,0)); // xuat tung bit du lieu tu 0 - 8  
+0A40:  BCF    FD8.0
+0A42:  RRCF   2C,F
+0A44:  BC    0A4A
+0A46:  BCF    F8C.3
+0A48:  BRA    0A4C
+0A4A:  BSF    F8C.3
+0A4C:  BCF    F95.3
+....................   delay_us(60); // tao tre 60us 
+0A4E:  MOVLW  3B
+0A50:  MOVWF  00
+0A52:  DECFSZ 00,F
+0A54:  BRA    0A52
+0A56:  BRA    0A58
+....................   output_float(ONE_WIRE_PIN); // dua 1-wire len muc cao,  
+0A58:  BSF    F95.3
+0A5A:  INCF   2D,F
+0A5C:  BRA    0A36
+....................  }  
+0A5E:  RETURN 0
+.................... }  
+.................... //==================== 
+.................... //Doc 1 byte tu 1 wire 
+.................... int doc_1wire()  
+.................... {  
+....................  int dem, dulieu; // khai bao bien dem va bien du lieu  
+....................  for (dem=0; dem<8; ++dem) // Lap lai 8 lan  
+0A60:  CLRF   2C
+0A62:  MOVF   2C,W
+0A64:  SUBLW  07
+0A66:  BNC   0A8A
+....................  {  
+....................   output_low(ONE_WIRE_PIN); // dua chan 1 wire xuong thap  
+0A68:  BCF    F95.3
+0A6A:  BCF    F8C.3
+....................   output_float(ONE_WIRE_PIN); // tha chan 1 wire len cao 
+0A6C:  BSF    F95.3
+....................   shift_right(&dulieu,1,input(ONE_WIRE_PIN)); // nhan du lieu tu 1 wire.  
+0A6E:  BSF    F95.3
+0A70:  BTFSC  F83.3
+0A72:  BRA    0A78
+0A74:  BCF    FD8.0
+0A76:  BRA    0A7A
+0A78:  BSF    FD8.0
+0A7A:  RRCF   2D,F
+....................   delay_us( 60 ); // cho 1 wire san sang 
+0A7C:  MOVLW  3B
+0A7E:  MOVWF  00
+0A80:  DECFSZ 00,F
+0A82:  BRA    0A80
+0A84:  BRA    0A86
+0A86:  INCF   2C,F
+0A88:  BRA    0A62
+....................  }  
+....................  return( dulieu ); //tra ve ket qua cho chuong trinh chinh 
+0A8A:  MOVFF  2D,01
+0A8E:  RETURN 0
+.................... }  
+....................  
+.................... #include<ds1820.c> //truy xuat vao file ds1820.c  
+.................... int8 lan_doc_ds=0; 
+.................... int16 thoi_gian_tre_ds=0; 
+.................... int16 gia_tri_ds;                        
+.................... int8 ds1820_read() 
+*
+0C5A:  CLRF   23
+.................... { 
+....................    int8 ket_qua=0;          
+....................    int8 temp1, temp2;   
+....................    int16 temp3;                                
+....................    float result; //khai bao bien tra ve ket qua sau doan chuong trinh   
+....................    if(thoi_gian_tre_ds>0) 
+0C5C:  MOVF   05,F
+0C5E:  BNZ   0C64
+0C60:  MOVF   06,F
+0C62:  BZ    0C6C
+....................    { 
+....................       thoi_gian_tre_ds--; 
+0C64:  MOVF   05,W
+0C66:  BTFSC  FD8.2
+0C68:  DECF   06,F
+0C6A:  DECF   05,F
+....................    } 
+....................    if(thoi_gian_tre_ds==0) 
+0C6C:  MOVF   05,F
+0C6E:  BNZ   0D3C
+0C70:  MOVF   06,F
+0C72:  BNZ   0D3C
+....................    { 
+....................       if(lan_doc_ds==0)         
+0C74:  MOVF   04,F
+0C76:  BNZ   0C92
+....................       { 
+....................          onewire_reset(); //lenh reset                                                                                                                           
+0C78:  RCALL  0A14
+....................          ghi_1wire(0xCC); //bo qua truy xuat rom                  
+0C7A:  MOVLW  CC
+0C7C:  MOVWF  2C
+0C7E:  RCALL  0A34
+....................          ghi_1wire(0x44); //Lenh chuyen doi nhiet do   
+0C80:  MOVLW  44
+0C82:  MOVWF  2C
+0C84:  RCALL  0A34
+....................          lan_doc_ds=1;  
+0C86:  MOVLW  01
+0C88:  MOVWF  04
+....................          thoi_gian_tre_ds=8;  
+0C8A:  CLRF   06
+0C8C:  MOVLW  08
+0C8E:  MOVWF  05
+....................       } 
+0C90:  BRA    0D3C
+....................       else                  
+....................       { 
+....................          onewire_reset();  //lenh reset   
+0C92:  RCALL  0A14
+....................          ghi_1wire(0xCC); //lenh bo qua truy xuat rom  
+0C94:  MOVLW  CC
+0C96:  MOVWF  2C
+0C98:  RCALL  0A34
+....................          ghi_1wire(0xBE); //Lenh doc du lieu tu ds18b20                                       
+0C9A:  MOVLW  BE
+0C9C:  MOVWF  2C
+0C9E:  RCALL  0A34
+....................          temp1 = doc_1wire(); //doc byte 0 8 bit 
+0CA0:  RCALL  0A60
+0CA2:  MOVFF  01,24
+....................          temp2 = doc_1wire(); //doc byte 1 8 bit 
+0CA6:  RCALL  0A60
+0CA8:  MOVFF  01,25
+....................          temp3 = make16(temp2, temp1); //noi hai byte thanh tu 16 bit          
+0CAC:  MOVFF  25,27
+0CB0:  MOVFF  24,26
+....................          result =  temp3 / 16.0;  //Chuyen doi nhiet do ds18b20 thanh dang so thuc 16 bit 
+0CB4:  MOVFF  27,2D
+0CB8:  MOVFF  26,2C
+0CBC:  RCALL  0A90
+0CBE:  MOVFF  03,2F
+0CC2:  MOVFF  02,2E
+0CC6:  MOVFF  01,2D
+0CCA:  MOVFF  00,2C
+0CCE:  CLRF   33
+0CD0:  CLRF   32
+0CD2:  CLRF   31
+0CD4:  MOVLW  83
+0CD6:  MOVWF  30
+0CD8:  RCALL  0AC6
+0CDA:  MOVFF  03,2B
+0CDE:  MOVFF  02,2A
+0CE2:  MOVFF  01,29
+0CE6:  MOVFF  00,28
+....................          result*=10; // 
+0CEA:  MOVFF  2B,37
+0CEE:  MOVFF  2A,36
+0CF2:  MOVFF  29,35
+0CF6:  MOVFF  28,34
+0CFA:  CLRF   3B
+0CFC:  CLRF   3A
+0CFE:  MOVLW  20
+0D00:  MOVWF  39
+0D02:  MOVLW  82
+0D04:  MOVWF  38
+0D06:  RCALL  051E
+0D08:  MOVFF  03,2B
+0D0C:  MOVFF  02,2A
+0D10:  MOVFF  01,29
+0D14:  MOVFF  00,28
+....................          gia_tri_ds=result; 
+0D18:  MOVFF  2B,2F
+0D1C:  MOVFF  2A,2E
+0D20:  MOVFF  29,2D
+0D24:  MOVFF  28,2C
+0D28:  BRA    0C20
+0D2A:  MOVFF  02,08
+0D2E:  MOVFF  01,07
+....................          ket_qua=1; 
+0D32:  MOVLW  01
+0D34:  MOVWF  23
+....................          lan_doc_ds=0;  
+0D36:  CLRF   04
+....................          thoi_gian_tre_ds=1;  
+0D38:  CLRF   06
+0D3A:  MOVWF  05
+....................       }          
+....................    } 
+....................    //delay_ms(750); 
+....................     
+....................    return(ket_qua);   
+0D3C:  MOVFF  23,01
+0D40:  GOTO   12B2 (RETURN)
+.................... }  
+....................  
+....................                                                                                                           
+.................... int8 c_g,dv_g,c_p,dv_p,c_h,dv_h,thu,c_d,dv_d,c_t,dv_t,c_n,dv_n; // khai bao ca bien chua gia tri thap phan cua cac don vi thoi gian 
+.................... int8 mang_tg_rtc[7]; // mang chua giu lieu thoi gian cua rtc 
+....................                
+.................... float nhiet_do; //khai bao bien nhiet do so thuc 32 bit  
+....................  
+....................  
+.................... void convert_bcd(); // chuen doi so 2 bcd thanh 2 so thap phan rieng le bao gom chuc va don vi rieng cua cac gia tri thoi gian   
+.................... void ReadRTC(int8 * buff); // doc cac gia tri thoi gian tu RTC vao mang 
+.................... void WriteRTC(int8 * buff); // ghi mang chua gia tri thoi gian vao RTC    
+.................... void rtc_init(void); 
+.................... void chinh_gio(); // khai bao ham chinh thoi gian 
+.................... void chinh_bt(); // khai bao ham chinh thoi gian bao thuc        
+.................... void tinh_thu(); 
+.................... //========================================                                                  
+.................... void hienthi1(int8 m)//hien thi chinh cai dat thoi gian vao 1307 
+.................... {           
+....................    LCD_putcmd(0x80); // lenh dua con tro den hang 1 cot 1 LCD   
+*
+0858:  MOVLW  80
+085A:  MOVWF  35
+085C:  RCALL  00B6
+....................     LCD_putchar(' '); 
+085E:  MOVLW  20
+0860:  MOVWF  34
+0862:  RCALL  02BE
+....................    if(m==1)                          
+0864:  DECFSZ 26,W
+0866:  BRA    0876
+....................    {                      
+....................       printf(LCD_putchar,"__"); // hien thi dau __ thay vì gia tri de bien minh dang chon gia tri can chinh nao   
+0868:  MOVLW  5F
+086A:  MOVWF  34
+086C:  RCALL  02BE
+086E:  MOVLW  5F
+0870:  MOVWF  34
+0872:  RCALL  02BE
+....................    } 
+0874:  BRA    088A
+....................    else  
+....................    { 
+....................       LCD_putchar(c_h + 0x30); // doi ma thap phan sang ASCII va xuat hien thi len LCD 
+0876:  MOVLW  30
+0878:  ADDWF  0D,W
+087A:  MOVWF  27
+087C:  MOVWF  34
+087E:  RCALL  02BE
+....................       LCD_putchar(dv_h + 0x30); // doi ma thap phan sang ASCII va xuat hien thi len LCD 
+0880:  MOVLW  30
+0882:  ADDWF  0E,W
+0884:  MOVWF  27
+0886:  MOVWF  34
+0888:  RCALL  02BE
+....................    }                            
+....................    printf(LCD_putchar,":"); 
+088A:  MOVLW  3A
+088C:  MOVWF  34
+088E:  RCALL  02BE
+....................    if(m==2) 
+0890:  MOVF   26,W
+0892:  SUBLW  02
+0894:  BNZ   08A4
+....................    { 
+....................       printf(LCD_putchar,"__"); 
+0896:  MOVLW  5F
+0898:  MOVWF  34
+089A:  RCALL  02BE
+089C:  MOVLW  5F
+089E:  MOVWF  34
+08A0:  RCALL  02BE
+....................    }  
+08A2:  BRA    08B8
+....................    else 
+....................    {   
+....................       LCD_putchar(c_p + 0x30); // doi ma thap phan sang ASCII va xuat hien thi len LCD  
+08A4:  MOVLW  30
+08A6:  ADDWF  0B,W
+08A8:  MOVWF  27
+08AA:  MOVWF  34
+08AC:  RCALL  02BE
+....................       LCD_putchar(dv_p + 0x30); // doi ma thap phan sang ASCII va xuat hien thi len LCD 
+08AE:  MOVLW  30
+08B0:  ADDWF  0C,W
+08B2:  MOVWF  27
+08B4:  MOVWF  34
+08B6:  RCALL  02BE
+....................    }  
+....................    printf(LCD_putchar,":");  
+08B8:  MOVLW  3A
+08BA:  MOVWF  34
+08BC:  RCALL  02BE
+....................    if(m==3) 
+08BE:  MOVF   26,W
+08C0:  SUBLW  03
+08C2:  BNZ   08D2
+....................    { 
+....................       printf(LCD_putchar,"__"); 
+08C4:  MOVLW  5F
+08C6:  MOVWF  34
+08C8:  RCALL  02BE
+08CA:  MOVLW  5F
+08CC:  MOVWF  34
+08CE:  RCALL  02BE
+....................    }       
+08D0:  BRA    08E6
+....................    else  
+....................    {           
+....................       LCD_putchar(c_g + 0x30); // doi ma thap phan sang ASCII va xuat hien thi len LCD  
+08D2:  MOVLW  30
+08D4:  ADDWF  09,W
+08D6:  MOVWF  27
+08D8:  MOVWF  34
+08DA:  RCALL  02BE
+....................       LCD_putchar(dv_g + 0x30); // doi ma thap phan sang ASCII va xuat hien thi len LCD 
+08DC:  MOVLW  30
+08DE:  ADDWF  0A,W
+08E0:  MOVWF  27
+08E2:  MOVWF  34
+08E4:  RCALL  02BE
+....................    }                            
+....................    printf(LCD_putchar," "); 
+08E6:  MOVLW  20
+08E8:  MOVWF  34
+08EA:  RCALL  02BE
+....................    printf(LCD_putchar," ");  
+08EC:  MOVLW  20
+08EE:  MOVWF  34
+08F0:  RCALL  02BE
+....................    if(thu!=8) 
+08F2:  MOVF   0F,W
+08F4:  SUBLW  08
+08F6:  BZ    091C
+....................    {                              
+....................       printf(LCD_putchar,"T");  
+08F8:  MOVLW  54
+08FA:  MOVWF  34
+08FC:  RCALL  02BE
+....................       printf(LCD_putchar,"H"); 
+08FE:  MOVLW  48
+0900:  MOVWF  34
+0902:  RCALL  02BE
+....................       printf(LCD_putchar,"U");      
+0904:  MOVLW  55
+0906:  MOVWF  34
+0908:  RCALL  02BE
+....................       printf(LCD_putchar," ");  
+090A:  MOVLW  20
+090C:  MOVWF  34
+090E:  RCALL  02BE
+....................       LCD_putchar(thu + 0x30); 
+0910:  MOVLW  30
+0912:  ADDWF  0F,W
+0914:  MOVWF  27
+0916:  MOVWF  34
+0918:  RCALL  02BE
+....................    }                                            
+091A:  BRA    093A
+....................    else 
+....................    {                          
+....................        printf(LCD_putchar,"C");  
+091C:  MOVLW  43
+091E:  MOVWF  34
+0920:  RCALL  02BE
+....................       printf(LCD_putchar,"H"); 
+0922:  MOVLW  48
+0924:  MOVWF  34
+0926:  RCALL  02BE
+....................       printf(LCD_putchar,"U");      
+0928:  MOVLW  55
+092A:  MOVWF  34
+092C:  RCALL  02BE
+....................       printf(LCD_putchar," "); 
+092E:  MOVLW  20
+0930:  MOVWF  34
+0932:  RCALL  02BE
+....................        printf(LCD_putchar,"N"); 
+0934:  MOVLW  4E
+0936:  MOVWF  34
+0938:  RCALL  02BE
+....................    }   
+....................     
+....................     
+....................      
+....................    //printf(LCD_putchar,"Nhiet: %03.1f ",nhiet_do); //xuat len lcd nhiet do do duoc      
+....................    LCD_putcmd(0xC0); // lenh dua con tro den hang 2 cot 1 LCD   
+093A:  MOVLW  C0
+093C:  MOVWF  35
+093E:  CALL   00B6
+....................    if(m==4)  
+0942:  MOVF   26,W
+0944:  SUBLW  04
+0946:  BNZ   0956
+....................    { 
+....................      printf(LCD_putchar,"__"); 
+0948:  MOVLW  5F
+094A:  MOVWF  34
+094C:  RCALL  02BE
+094E:  MOVLW  5F
+0950:  MOVWF  34
+0952:  RCALL  02BE
+....................    }  
+0954:  BRA    096A
+....................    else  
+....................    { 
+....................       LCD_putchar(c_d + 0x30); // doi ma thap phan sang ASCII va xuat hien thi len LCD  
+0956:  MOVLW  30
+0958:  ADDWF  10,W
+095A:  MOVWF  27
+095C:  MOVWF  34
+095E:  RCALL  02BE
+....................       LCD_putchar(dv_d + 0x30);  // doi ma thap phan sang ASCII va xuat hien thi len LCD 
+0960:  MOVLW  30
+0962:  ADDWF  11,W
+0964:  MOVWF  27
+0966:  MOVWF  34
+0968:  RCALL  02BE
+....................    } 
+....................    printf(LCD_putchar,"/");  
+096A:  MOVLW  2F
+096C:  MOVWF  34
+096E:  RCALL  02BE
+....................    if(m==5) 
+0970:  MOVF   26,W
+0972:  SUBLW  05
+0974:  BNZ   0984
+....................    {                                                                                                   
+....................       printf(LCD_putchar,"__"); 
+0976:  MOVLW  5F
+0978:  MOVWF  34
+097A:  RCALL  02BE
+097C:  MOVLW  5F
+097E:  MOVWF  34
+0980:  RCALL  02BE
+....................    }                                                                                                         
+0982:  BRA    0998
+....................    else  
+....................    { 
+....................       LCD_putchar(c_t + 0x30);  // doi ma thap phan sang ASCII va xuat hien thi len LCD 
+0984:  MOVLW  30
+0986:  ADDWF  12,W
+0988:  MOVWF  27
+098A:  MOVWF  34
+098C:  RCALL  02BE
+....................       LCD_putchar(dv_t + 0x30);  // doi ma thap phan sang ASCII va xuat hien thi len LCD 
+098E:  MOVLW  30
+0990:  ADDWF  13,W
+0992:  MOVWF  27
+0994:  MOVWF  34
+0996:  RCALL  02BE
+....................    } 
+....................    printf(LCD_putchar,"/");   
+0998:  MOVLW  2F
+099A:  MOVWF  34
+099C:  RCALL  02BE
+....................    printf(LCD_putchar,"20"); 
+099E:  MOVLW  32
+09A0:  MOVWF  34
+09A2:  RCALL  02BE
+09A4:  MOVLW  30
+09A6:  MOVWF  34
+09A8:  RCALL  02BE
+....................    if(m==6)                                                                                  
+09AA:  MOVF   26,W
+09AC:  SUBLW  06
+09AE:  BNZ   09BE
+....................    { 
+....................       printf(LCD_putchar,"__");  
+09B0:  MOVLW  5F
+09B2:  MOVWF  34
+09B4:  RCALL  02BE
+09B6:  MOVLW  5F
+09B8:  MOVWF  34
+09BA:  RCALL  02BE
+....................    }  
+09BC:  BRA    09D2
+....................    else 
+....................    { 
+....................       LCD_putchar(c_n + 0x30); // doi ma thap phan sang ASCII va xuat hien thi len LCD  
+09BE:  MOVLW  30
+09C0:  ADDWF  14,W
+09C2:  MOVWF  27
+09C4:  MOVWF  34
+09C6:  RCALL  02BE
+....................       LCD_putchar(dv_n + 0x30); // doi ma thap phan sang ASCII va xuat hien thi len LCD 
+09C8:  MOVLW  30
+09CA:  ADDWF  15,W
+09CC:  MOVWF  27
+09CE:  MOVWF  34
+09D0:  RCALL  02BE
+....................    }                          
+....................    printf(LCD_putchar," ");  
+09D2:  MOVLW  20
+09D4:  MOVWF  34
+09D6:  RCALL  02BE
+....................    printf(LCD_putchar,"%03.1f",nhiet_do); //xuat len lcd nhiet do do duoc 
+09D8:  MOVLW  42
+09DA:  MOVWF  FE9
+09DC:  MOVFF  20,2A
+09E0:  MOVFF  1F,29
+09E4:  MOVFF  1E,28
+09E8:  MOVFF  1D,27
+09EC:  MOVLW  01
+09EE:  MOVWF  2B
+09F0:  BRA    06DE
+....................    LCD_putchar(223); //xuat len lcd ki tu do  
+09F2:  MOVLW  DF
+09F4:  MOVWF  34
+09F6:  RCALL  02BE
+09F8:  RETURN 0
+....................    //LCD_putchar("C    "); //xuat len ldc ki tu C      
+.................... } 
+.................... //========================================  
+.................... void Cai_dat_thoi_gian(unsigned char giay,unsigned char phut,unsigned char gio,unsigned char thu_1,unsigned char ngay,unsigned char thang,unsigned char nam) 
+.................... { 
+....................    mang_tg_rtc[0] = giay; // chuyen 2 so thap phan cua giay thanh BCD luu vao mang thoi gian  
+....................    mang_tg_rtc[1] = phut; // chuyen 2 so thap phan cua phut thanh BCD luu vao mang thoi gian  
+....................    mang_tg_rtc[2] = gio; // chuyen 2 so thap phan cua gio thanh BCD luu vao mang thoi gian  
+....................    mang_tg_rtc[3] = thu_1;                      
+....................    mang_tg_rtc[4] = ngay; // chuyen 2 so thap phan cua ngay thanh BCD luu vao mang thoi gian  
+....................    mang_tg_rtc[5] = thang; // chuyen 2 so thap phan cua thang thanh BCD luu vao mang thoi gian  
+....................    mang_tg_rtc[6] = nam; // chuyen 2 so thap phan cua nam thanh BCD luu vao mang thoi gian  
+....................    WriteRTC(&mang_tg_rtc[0]); // ghi mang thoi gian vao DS1307      
+.................... } 
+.................... //============================       
+.................... void main()          
+*
+122A:  CLRF   FF8
+122C:  BCF    FD0.7
+122E:  CLRF   04
+1230:  CLRF   06
+1232:  CLRF   05
+1234:  CLRF   22
+1236:  CLRF   21
+1238:  MOVF   FC1,W
+123A:  ANDLW  C0
+123C:  IORLW  0F
+123E:  MOVWF  FC1
+1240:  MOVLW  07
+1242:  MOVWF  FB4
+.................... { 
+....................    output_high(led);        
+1244:  BCF    F92.0
+1246:  BSF    F89.0
+....................    lcd_init(); // khoi tao LCD              
+1248:  GOTO   00CC
+....................    rtc_init();           
+124C:  GOTO   01DC
+....................    LCD_putcmd(0x80); // lenh dua con tro den dong 1 cot 1  
+1250:  MOVLW  80
+1252:  MOVWF  35
+1254:  CALL   00B6
+....................    printf(LCD_putchar,"KHOA DIEN TU");  // xuat hien thi chuoi len LCD  
+1258:  MOVLW  22
+125A:  MOVWF  FF6
+125C:  MOVLW  00
+125E:  MOVWF  FF7
+1260:  CALL   02CE
+....................    LCD_putcmd(0xC0); // lenh dua co tro den dong 2 cot 1  
+1264:  MOVLW  C0
+1266:  MOVWF  35
+1268:  CALL   00B6
+....................    printf(LCD_putchar,"DO AN CS NHOM 10 "); // xuat hien thi chuoi len LCD   
+126C:  MOVLW  30
+126E:  MOVWF  FF6
+1270:  MOVLW  00
+1272:  MOVWF  FF7
+1274:  CALL   02CE
+....................    DELAY_MS(3000); // tao thoi gian tre   
+1278:  MOVLW  0C
+127A:  MOVWF  23
+127C:  MOVLW  FA
+127E:  MOVWF  36
+1280:  CALL   0074
+1284:  DECFSZ 23,F
+1286:  BRA    127C
+....................    //Ghi vao DS1307 
+....................    //Cai_dat_thoi_gian(9,9,0,6,8,12,23); 
+....................    //DELAY_MS(300);  
+....................    ReadRTC(&mang_tg_rtc[0]); // do thoi gian tu RTC    
+1288:  CLRF   27
+128A:  MOVLW  16
+128C:  MOVWF  26
+128E:  CALL   02EE
+....................       convert_bcd(); // chuyen doi thoi gian trong RTC sang so thap phan   
+1292:  CALL   0428
+....................       tinh_thu();   
+1296:  CALL   04AA
+....................       hienthi1(0); // xuat hien thi len LCD    
+129A:  CLRF   26
+129C:  CALL   0858
+....................      DELAY_MS(3000);    
+12A0:  MOVLW  0C
+12A2:  MOVWF  23
+12A4:  MOVLW  FA
+12A6:  MOVWF  36
+12A8:  CALL   0074
+12AC:  DECFSZ 23,F
+12AE:  BRA    12A4
+....................    //========================================  
+....................    while(true)                                    
+....................    {  
+....................       if(ds1820_read()==1) 
+12B0:  BRA    0C5A
+12B2:  DECFSZ 01,W
+12B4:  BRA    1302
+....................       { 
+....................          nhiet_do=gia_tri_ds; 
+12B6:  MOVFF  08,2D
+12BA:  MOVFF  07,2C
+12BE:  CALL   0A90
+12C2:  MOVFF  03,20
+12C6:  MOVFF  02,1F
+12CA:  MOVFF  01,1E
+12CE:  MOVFF  00,1D
+....................          nhiet_do/=10;  
+12D2:  MOVFF  20,2F
+12D6:  MOVFF  1F,2E
+12DA:  MOVFF  1E,2D
+12DE:  MOVFF  1D,2C
+12E2:  CLRF   33
+12E4:  CLRF   32
+12E6:  MOVLW  20
+12E8:  MOVWF  31
+12EA:  MOVLW  82
+12EC:  MOVWF  30
+12EE:  CALL   0AC6
+12F2:  MOVFF  03,20
+12F6:  MOVFF  02,1F
+12FA:  MOVFF  01,1E
+12FE:  MOVFF  00,1D
+....................       }                
+....................       ReadRTC(&mang_tg_rtc[0]); // do thoi gian tu RTC    
+1302:  CLRF   27
+1304:  MOVLW  16
+1306:  MOVWF  26
+1308:  CALL   02EE
+....................       convert_bcd(); // chuyen doi thoi gian trong RTC sang so thap phan   
+130C:  CALL   0428
+....................       tinh_thu();   
+1310:  CALL   04AA
+....................       hienthi1(0); // xuat hien thi len LCD    
+1314:  CLRF   26
+1316:  CALL   0858
+....................       if(input(k1)==0) // khi nhan phim chinh thoi gian 
+131A:  BSF    F93.0
+131C:  BTFSC  F81.0
+131E:  BRA    1328
+....................       {  
+....................          while(input(k1)==0); // cho cho toi khi nut nhan duoc nha  
+1320:  BSF    F93.0
+1322:  BTFSS  F81.0
+1324:  BRA    1320
+....................          chinh_gio(); // thuc hien ham chinh thoi gian                     
+1326:  BRA    0E4A
+....................       } 
+1328:  BRA    12B0
+....................        
+....................    }   
+....................  } 
+.................... //========================================  
+132A:  SLEEP 
+.................... void convert_bcd() // BCD sang so thap phan 
+.................... { 
+....................    c_g=mang_tg_rtc[0]>>4; // dich phai 4 bit de lay hang chuc   
+*
+0428:  SWAPF  16,W
+042A:  MOVWF  09
+042C:  MOVLW  0F
+042E:  ANDWF  09,F
+....................    dv_g=mang_tg_rtc[0]&15; // xoa 4 vit cao de lay hang don vi  
+0430:  MOVF   16,W
+0432:  ANDLW  0F
+0434:  MOVWF  0A
+....................    c_p=mang_tg_rtc[1]>>4; // dich phai 4 bit de lay hang chuc  
+0436:  SWAPF  17,W
+0438:  MOVWF  0B
+043A:  MOVLW  0F
+043C:  ANDWF  0B,F
+....................    dv_p=mang_tg_rtc[1]&0x0f; // xoa 4 vit cao de lay hang don vi  
+043E:  MOVF   17,W
+0440:  ANDLW  0F
+0442:  MOVWF  0C
+....................    c_h=mang_tg_rtc[2]>>4; // dich phai 4 bit de lay hang chuc  
+0444:  SWAPF  18,W
+0446:  MOVWF  0D
+0448:  MOVLW  0F
+044A:  ANDWF  0D,F
+....................    dv_h=mang_tg_rtc[2]&0x0f; // xoa 4 vit cao de lay hang don vi  
+044C:  MOVF   18,W
+044E:  ANDLW  0F
+0450:  MOVWF  0E
+....................    thu = mang_tg_rtc[3];  
+0452:  MOVFF  19,0F
+....................    c_d=mang_tg_rtc[4]>>4; // dich phai 4 bit de lay hang chuc  
+0456:  SWAPF  1A,W
+0458:  MOVWF  10
+045A:  MOVLW  0F
+045C:  ANDWF  10,F
+....................    dv_d=mang_tg_rtc[4]&0x0f; // xoa 4 vit cao    de lay hang don vi                           
+045E:  MOVF   1A,W
+0460:  ANDLW  0F
+0462:  MOVWF  11
+....................    c_t=mang_tg_rtc[5]>>4; // dich phai 4 bit de lay hang chuc  
+0464:  SWAPF  1B,W
+0466:  MOVWF  12
+0468:  MOVLW  0F
+046A:  ANDWF  12,F
+....................    dv_t=mang_tg_rtc[5]&0x0f; // xoa 4 vit cao de lay hang don vi                        
+046C:  MOVF   1B,W
+046E:  ANDLW  0F
+0470:  MOVWF  13
+....................    c_n=mang_tg_rtc[6]>>4; // dich phai 4 bit de lay hang chuc  
+0472:  SWAPF  1C,W
+0474:  MOVWF  14
+0476:  MOVLW  0F
+0478:  ANDWF  14,F
+....................    dv_n=mang_tg_rtc[6]&0x0f; // xoa 4 vit cao de lay hang don vi  
+047A:  MOVF   1C,W
+047C:  ANDLW  0F
+047E:  MOVWF  15
+0480:  RETURN 0
+.................... } 
+.................... //========================================  
+.................... void chinh_gio() // ham chinh thoi gian thuc 
+*
+0E4A:  MOVLW  01
+0E4C:  MOVWF  23
+0E4E:  CLRF   24
+.................... { 
+....................    int8 mode=1,i=0,t;      
+....................    ReadRTC(&mang_tg_rtc[0]); 
+0E50:  CLRF   27
+0E52:  MOVLW  16
+0E54:  MOVWF  26
+0E56:  CALL   02EE
+....................    convert_bcd(); // chuyen doi thoi gian trong rtc ra so thap phan 
+0E5A:  CALL   0428
+....................    while(true) // vong lap vo han. chi thoat neu co lenh break cua ham 
+....................     { 
+....................          tinh_thu();   
+0E5E:  CALL   04AA
+....................          if(i<5) // khi bien lap i tu 0-4 thi hien thi gia tri can chinh  
+0E62:  MOVF   24,W
+0E64:  SUBLW  04
+0E66:  BNC   0E6E
+....................             hienthi1(0); // hien thi nhu binh thuong cac gia tri thoi gian 
+0E68:  CLRF   26
+0E6A:  RCALL  0858
+0E6C:  BRA    0E74
+....................          else // khi bien lap i trong lan quet 5-9 thi hien thi dau '?' cho bien minh dang chon gia tri chinh nao  
+....................             hienthi1(mode); // hien thi dau '?' tai gia tri duoc chon  
+0E6E:  MOVFF  23,26
+0E72:  RCALL  0858
+....................          i++; if(i>=10) i = 0; // tang bien i sau moi lan quet (gioi han 0-9)  
+0E74:  INCF   24,F
+0E76:  MOVF   24,W
+0E78:  SUBLW  09
+0E7A:  BC    0E7E
+0E7C:  CLRF   24
+....................          if(input(k2)==0) // nut tang duoc nhan 
+0E7E:  BSF    F93.1
+0E80:  BTFSC  F81.1
+0E82:  BRA    0FEE
+....................          {   
+....................             while(input(k2)==0); // cho nut tang duoc nha 
+0E84:  BSF    F93.1
+0E86:  BTFSS  F81.1
+0E88:  BRA    0E84
+....................             i=0; // cho i = 0 de tiep tuc hien thi gia tri duoc chon 
+0E8A:  CLRF   24
+....................             switch(mode) // lua chon tang gia tri tuy thuoc vao bien mode       
+0E8C:  MOVLW  01
+0E8E:  SUBWF  23,W
+0E90:  ADDLW  FA
+0E92:  BTFSC  FD8.0
+0E94:  BRA    0FEE
+0E96:  ADDLW  06
+0E98:  GOTO   11DE
+....................             { 
+....................                case 1: // mode = 1 // tang gio gio  
+....................                   t = c_h*10+dv_h; // ghep 2 so thap phan rieng le vao mot bien tam  
+0E9C:  MOVF   0D,W
+0E9E:  MULLW  0A
+0EA0:  MOVF   FF3,W
+0EA2:  ADDWF  0E,W
+0EA4:  MOVWF  25
+....................                   if(t<23) // neu gio <23 thi tang gio  
+0EA6:  MOVF   25,W
+0EA8:  SUBLW  16
+0EAA:  BNC   0EB0
+....................                      t++; 
+0EAC:  INCF   25,F
+0EAE:  BRA    0EB2
+....................                   else  
+....................                      t = 0; // neu gio >23 thi nap lai gio =0  
+0EB0:  CLRF   25
+....................                   c_h = t/10; // tach roi hang chuc cua bien tam gio 
+0EB2:  MOVFF  25,28
+0EB6:  MOVLW  0A
+0EB8:  MOVWF  29
+0EBA:  CALL   0482
+0EBE:  MOVFF  01,0D
+....................                   dv_h = t%10; // tach toi hang don vi cua bien tam gio 
+0EC2:  MOVFF  25,28
+0EC6:  MOVLW  0A
+0EC8:  MOVWF  29
+0ECA:  CALL   0482
+0ECE:  MOVFF  00,0E
+....................                   break; // thoat khoi ham chon 
+0ED2:  BRA    0FEE
+....................                case 2: // mode = 2 // tang phut  
+....................                   t = c_p*10+dv_p; // tuong tu nhu voi gio   
+0ED4:  MOVF   0B,W
+0ED6:  MULLW  0A
+0ED8:  MOVF   FF3,W
+0EDA:  ADDWF  0C,W
+0EDC:  MOVWF  25
+....................                   if(t<59)  
+0EDE:  MOVF   25,W
+0EE0:  SUBLW  3A
+0EE2:  BNC   0EE8
+....................                      t++; 
+0EE4:  INCF   25,F
+0EE6:  BRA    0EEA
+....................                   else                                                                                
+....................                      t = 0;  
+0EE8:  CLRF   25
+....................                   c_p = t/10;  
+0EEA:  MOVFF  25,28
+0EEE:  MOVLW  0A
+0EF0:  MOVWF  29
+0EF2:  CALL   0482
+0EF6:  MOVFF  01,0B
+....................                   dv_p = t%10; 
+0EFA:  MOVFF  25,28
+0EFE:  MOVLW  0A
+0F00:  MOVWF  29
+0F02:  CALL   0482
+0F06:  MOVFF  00,0C
+....................                   break; 
+0F0A:  BRA    0FEE
+....................                case 3:  
+....................                   t = c_g*10+dv_g;  
+0F0C:  MOVF   09,W
+0F0E:  MULLW  0A
+0F10:  MOVF   FF3,W
+0F12:  ADDWF  0A,W
+0F14:  MOVWF  25
+....................                   if(t<59)  
+0F16:  MOVF   25,W
+0F18:  SUBLW  3A
+0F1A:  BNC   0F20
+....................                      t++; 
+0F1C:  INCF   25,F
+0F1E:  BRA    0F22
+....................                   else  
+....................                      t = 0; 
+0F20:  CLRF   25
+....................                   c_g = t/10;  
+0F22:  MOVFF  25,28
+0F26:  MOVLW  0A
+0F28:  MOVWF  29
+0F2A:  CALL   0482
+0F2E:  MOVFF  01,09
+....................                   dv_g = t%10; 
+0F32:  MOVFF  25,28
+0F36:  MOVLW  0A
+0F38:  MOVWF  29
+0F3A:  CALL   0482
+0F3E:  MOVFF  00,0A
+....................                   break; 
+0F42:  BRA    0FEE
+....................                case 4:  
+....................                   t = c_d*10+dv_d;  
+0F44:  MOVF   10,W
+0F46:  MULLW  0A
+0F48:  MOVF   FF3,W
+0F4A:  ADDWF  11,W
+0F4C:  MOVWF  25
+....................                   if(t<31)  
+0F4E:  MOVF   25,W
+0F50:  SUBLW  1E
+0F52:  BNC   0F58
+....................                      t++; 
+0F54:  INCF   25,F
+0F56:  BRA    0F5C
+....................                   else  
+....................                      t = 1; 
+0F58:  MOVLW  01
+0F5A:  MOVWF  25
+....................                   c_d = t/10;  
+0F5C:  MOVFF  25,28
+0F60:  MOVLW  0A
+0F62:  MOVWF  29
+0F64:  CALL   0482
+0F68:  MOVFF  01,10
+....................                   dv_d = t%10; 
+0F6C:  MOVFF  25,28
+0F70:  MOVLW  0A
+0F72:  MOVWF  29
+0F74:  CALL   0482
+0F78:  MOVFF  00,11
+....................                   break; 
+0F7C:  BRA    0FEE
+....................                case 5:  
+....................                   t = c_t*10+dv_t;  
+0F7E:  MOVF   12,W
+0F80:  MULLW  0A
+0F82:  MOVF   FF3,W
+0F84:  ADDWF  13,W
+0F86:  MOVWF  25
+....................                   if(t<12)  
+0F88:  MOVF   25,W
+0F8A:  SUBLW  0B
+0F8C:  BNC   0F92
+....................                      t++; 
+0F8E:  INCF   25,F
+0F90:  BRA    0F96
+....................                   else  
+....................                      t = 1; 
+0F92:  MOVLW  01
+0F94:  MOVWF  25
+....................                   c_t = t/10;  
+0F96:  MOVFF  25,28
+0F9A:  MOVLW  0A
+0F9C:  MOVWF  29
+0F9E:  CALL   0482
+0FA2:  MOVFF  01,12
+....................                   dv_t = t%10; 
+0FA6:  MOVFF  25,28
+0FAA:  MOVLW  0A
+0FAC:  MOVWF  29
+0FAE:  CALL   0482
+0FB2:  MOVFF  00,13
+....................                   break; 
+0FB6:  BRA    0FEE
+....................                case 6:  
+....................                   t = c_n*10+dv_n;  
+0FB8:  MOVF   14,W
+0FBA:  MULLW  0A
+0FBC:  MOVF   FF3,W
+0FBE:  ADDWF  15,W
+0FC0:  MOVWF  25
+....................                   if(t<99)  
+0FC2:  MOVF   25,W
+0FC4:  SUBLW  62
+0FC6:  BNC   0FCC
+....................                      t++; 
+0FC8:  INCF   25,F
+0FCA:  BRA    0FCE
+....................                   else  
+....................                      t = 0;  
+0FCC:  CLRF   25
+....................                   c_n = t/10;  
+0FCE:  MOVFF  25,28
+0FD2:  MOVLW  0A
+0FD4:  MOVWF  29
+0FD6:  CALL   0482
+0FDA:  MOVFF  01,14
+....................                   dv_n = t%10; 
+0FDE:  MOVFF  25,28
+0FE2:  MOVLW  0A
+0FE4:  MOVWF  29
+0FE6:  CALL   0482
+0FEA:  MOVFF  00,15
+....................                   break; 
+....................             } 
+....................          }      
+....................          //----------------------------------------  
+....................          if(input(k3)==0) // khi nhan nut giam 
+0FEE:  BSF    F93.2
+0FF0:  BTFSC  F81.2
+0FF2:  BRA    115E
+....................          {   
+....................             while(input(k3)==0); // cho nha nut giam 
+0FF4:  BSF    F93.2
+0FF6:  BTFSS  F81.2
+0FF8:  BRA    0FF4
+....................             i=0;         
+0FFA:  CLRF   24
+....................             switch(mode) 
+0FFC:  MOVLW  01
+0FFE:  SUBWF  23,W
+1000:  ADDLW  FA
+1002:  BTFSC  FD8.0
+1004:  BRA    115E
+1006:  ADDLW  06
+1008:  GOTO   1204
+....................             { 
+....................                case 1:  
+....................                   t = c_h*10+dv_h;  
+100C:  MOVF   0D,W
+100E:  MULLW  0A
+1010:  MOVF   FF3,W
+1012:  ADDWF  0E,W
+1014:  MOVWF  25
+....................                   if(t>0)  
+1016:  MOVF   25,F
+1018:  BZ    101E
+....................                      t--; 
+101A:  DECF   25,F
+101C:  BRA    1022
+....................                   else  
+....................                      t = 23;  
+101E:  MOVLW  17
+1020:  MOVWF  25
+....................                   c_h = t/10;  
+1022:  MOVFF  25,28
+1026:  MOVLW  0A
+1028:  MOVWF  29
+102A:  CALL   0482
+102E:  MOVFF  01,0D
+....................                   dv_h = t%10; //chuc gio + dvi gio nho hon 0 thi nhay ve 23 
+1032:  MOVFF  25,28
+1036:  MOVLW  0A
+1038:  MOVWF  29
+103A:  CALL   0482
+103E:  MOVFF  00,0E
+....................                   break; 
+1042:  BRA    115E
+....................                case 2:  
+....................                   t = c_p*10+dv_p;  
+1044:  MOVF   0B,W
+1046:  MULLW  0A
+1048:  MOVF   FF3,W
+104A:  ADDWF  0C,W
+104C:  MOVWF  25
+....................                   if(t>0)  
+104E:  MOVF   25,F
+1050:  BZ    1056
+....................                      t--;  
+1052:  DECF   25,F
+1054:  BRA    105A
+....................                   else  
+....................                      t = 59;  
+1056:  MOVLW  3B
+1058:  MOVWF  25
+....................                   c_p = t/10;  
+105A:  MOVFF  25,28
+105E:  MOVLW  0A
+1060:  MOVWF  29
+1062:  CALL   0482
+1066:  MOVFF  01,0B
+....................                   dv_p = t%10; //chuc phuc + dvi phut gio nho hon 0 thi nhay ve 59 
+106A:  MOVFF  25,28
+106E:  MOVLW  0A
+1070:  MOVWF  29
+1072:  CALL   0482
+1076:  MOVFF  00,0C
+....................                   break; 
+107A:  BRA    115E
+....................                case 3:  
+....................                   t = c_g*10+dv_g;  
+107C:  MOVF   09,W
+107E:  MULLW  0A
+1080:  MOVF   FF3,W
+1082:  ADDWF  0A,W
+1084:  MOVWF  25
+....................                   if(t>0)  
+1086:  MOVF   25,F
+1088:  BZ    108E
+....................                      t--;  
+108A:  DECF   25,F
+108C:  BRA    1092
+....................                   else  
+....................                      t = 59;  
+108E:  MOVLW  3B
+1090:  MOVWF  25
+....................                   c_g = t/10;  
+1092:  MOVFF  25,28
+1096:  MOVLW  0A
+1098:  MOVWF  29
+109A:  CALL   0482
+109E:  MOVFF  01,09
+....................                   dv_g = t%10;//chuc giay + dvi giay gio nho hon 0 thi nhay ve 59 
+10A2:  MOVFF  25,28
+10A6:  MOVLW  0A
+10A8:  MOVWF  29
+10AA:  CALL   0482
+10AE:  MOVFF  00,0A
+....................                   break; 
+10B2:  BRA    115E
+....................                case 4:  
+....................                   t = c_d*10+dv_d;  
+10B4:  MOVF   10,W
+10B6:  MULLW  0A
+10B8:  MOVF   FF3,W
+10BA:  ADDWF  11,W
+10BC:  MOVWF  25
+....................                   if(t>1)  
+10BE:  MOVF   25,W
+10C0:  SUBLW  01
+10C2:  BC    10C8
+....................                      t--;  
+10C4:  DECF   25,F
+10C6:  BRA    10CC
+....................                   else  
+....................                      t = 31;  
+10C8:  MOVLW  1F
+10CA:  MOVWF  25
+....................                   c_d = t/10;  
+10CC:  MOVFF  25,28
+10D0:  MOVLW  0A
+10D2:  MOVWF  29
+10D4:  CALL   0482
+10D8:  MOVFF  01,10
+....................                   dv_d = t%10;//chuc ngay + dvi ngay nho hon 1 thi nhay ve 31 
+10DC:  MOVFF  25,28
+10E0:  MOVLW  0A
+10E2:  MOVWF  29
+10E4:  CALL   0482
+10E8:  MOVFF  00,11
+....................                   break; 
+10EC:  BRA    115E
+....................                case 5:  
+....................                   t =  
+....................                   c_t*10+dv_t;  
+10EE:  MOVF   12,W
+10F0:  MULLW  0A
+10F2:  MOVF   FF3,W
+10F4:  ADDWF  13,W
+10F6:  MOVWF  25
+....................                   if(t>1)  
+10F8:  MOVF   25,W
+10FA:  SUBLW  01
+10FC:  BC    1102
+....................                      t--;  
+10FE:  DECF   25,F
+1100:  BRA    1106
+....................                   else  
+....................                      t = 12;  
+1102:  MOVLW  0C
+1104:  MOVWF  25
+....................                   c_t = t/10;  
+1106:  MOVFF  25,28
+110A:  MOVLW  0A
+110C:  MOVWF  29
+110E:  CALL   0482
+1112:  MOVFF  01,12
+....................                   dv_t = t%10;//chuc thang + dvi thango nho hon 1 thi nhay ve 12 
+1116:  MOVFF  25,28
+111A:  MOVLW  0A
+111C:  MOVWF  29
+111E:  CALL   0482
+1122:  MOVFF  00,13
+....................                   break; 
+1126:  BRA    115E
+....................                case 6:  
+....................                   t = c_n*10+dv_n;  
+1128:  MOVF   14,W
+112A:  MULLW  0A
+112C:  MOVF   FF3,W
+112E:  ADDWF  15,W
+1130:  MOVWF  25
+....................                   if(t>0)  
+1132:  MOVF   25,F
+1134:  BZ    113A
+....................                      t--;  
+1136:  DECF   25,F
+1138:  BRA    113E
+....................                   else  
+....................                      t = 99;  
+113A:  MOVLW  63
+113C:  MOVWF  25
+....................                   c_n = t/10;  
+113E:  MOVFF  25,28
+1142:  MOVLW  0A
+1144:  MOVWF  29
+1146:  CALL   0482
+114A:  MOVFF  01,14
+....................                   dv_n = t%10;//chuc nam + dvi nam nho hon 0 thi nhay ve 99 
+114E:  MOVFF  25,28
+1152:  MOVLW  0A
+1154:  MOVWF  29
+1156:  CALL   0482
+115A:  MOVFF  00,15
+....................                   break; 
+....................             }         
+....................          } 
+....................          if(input(k1)==0) // khi nhan nut set  
+115E:  BSF    F93.0
+1160:  BTFSC  F81.0
+1162:  BRA    1178
+....................          {  
+....................             while(input(k1)==0); // cho nha nut set  
+1164:  BSF    F93.0
+1166:  BTFSS  F81.0
+1168:  BRA    1164
+....................             i=5;    
+116A:  MOVLW  05
+116C:  MOVWF  24
+....................             mode++; // tang bien chon gia tri chinh  
+116E:  INCF   23,F
+....................             if(mode>6)   
+1170:  MOVF   23,W
+1172:  SUBLW  06
+1174:  BC    1178
+....................                break; // khi nhan chinh het 6 gia tri thi thoat khoi ham chinh thoi gian   
+1176:  BRA    117A
+....................          }                                                            
+1178:  BRA    0E5E
+....................     } 
+....................    //========================================  
+....................    mang_tg_rtc[0] = (c_g<<4) | dv_g; // chuyen 2 so thap phan cua giay thanh BCD luu vao mang thoi gian  
+117A:  SWAPF  09,W
+117C:  MOVWF  00
+117E:  MOVLW  F0
+1180:  ANDWF  00,F
+1182:  MOVF   00,W
+1184:  IORWF  0A,W
+1186:  MOVWF  16
+....................    mang_tg_rtc[1] = (c_p<<4) | dv_p; // chuyen 2 so thap phan cua phut thanh BCD luu vao mang thoi gian  
+1188:  SWAPF  0B,W
+118A:  MOVWF  00
+118C:  MOVLW  F0
+118E:  ANDWF  00,F
+1190:  MOVF   00,W
+1192:  IORWF  0C,W
+1194:  MOVWF  17
+....................    mang_tg_rtc[2] = (c_h<<4) | dv_h; // chuyen 2 so thap phan cua gio thanh BCD luu vao mang thoi gian  
+1196:  SWAPF  0D,W
+1198:  MOVWF  00
+119A:  MOVLW  F0
+119C:  ANDWF  00,F
+119E:  MOVF   00,W
+11A0:  IORWF  0E,W
+11A2:  MOVWF  18
+....................    mang_tg_rtc[3] = thu;                      
+11A4:  MOVFF  0F,19
+....................    mang_tg_rtc[4] = (c_d<<4) | dv_d; // chuyen 2 so thap phan cua ngay thanh BCD luu vao mang thoi gian  
+11A8:  SWAPF  10,W
+11AA:  MOVWF  00
+11AC:  MOVLW  F0
+11AE:  ANDWF  00,F
+11B0:  MOVF   00,W
+11B2:  IORWF  11,W
+11B4:  MOVWF  1A
+....................    mang_tg_rtc[5] = (c_t<<4) | dv_t; // chuyen 2 so thap phan cua thang thanh BCD luu vao mang thoi gian  
+11B6:  SWAPF  12,W
+11B8:  MOVWF  00
+11BA:  MOVLW  F0
+11BC:  ANDWF  00,F
+11BE:  MOVF   00,W
+11C0:  IORWF  13,W
+11C2:  MOVWF  1B
+....................    mang_tg_rtc[6] = (c_n<<4) | dv_n; // chuyen 2 so thap phan cua nam thanh BCD luu vao mang thoi gian  
+11C4:  SWAPF  14,W
+11C6:  MOVWF  00
+11C8:  MOVLW  F0
+11CA:  ANDWF  00,F
+11CC:  MOVF   00,W
+11CE:  IORWF  15,W
+11D0:  MOVWF  1C
+....................    WriteRTC(&mang_tg_rtc[0]); // ghi mang thoi gian vao DS1307      
+11D2:  CLRF   27
+11D4:  MOVLW  16
+11D6:  MOVWF  26
+11D8:  BRA    0D44
+11DA:  GOTO   1328 (RETURN)
+.................... }  
+.................... //========================================  
+.................... const int8 d_thang[] = {0,0,3,3,6,1,4,6,2,5,0,3,5}; 
+.................... void tinh_thu()  
+.................... {                                                                 
+....................    int8 a; 
+....................    int8 b; 
+....................    b=c_n*10+dv_n+5;//31/12/1999: THU 6 
+*
+04AA:  MOVF   14,W
+04AC:  MULLW  0A
+04AE:  MOVF   FF3,W
+04B0:  ADDWF  15,W
+04B2:  ADDLW  05
+04B4:  MOVWF  27
+....................    a=c_n*10+dv_n&0xFC; 
+04B6:  MOVF   14,W
+04B8:  MULLW  0A
+04BA:  MOVF   FF3,W
+04BC:  ADDWF  15,W
+04BE:  ANDLW  FC
+04C0:  MOVWF  26
+....................    a=a>>2; 
+04C2:  RRCF   26,F
+04C4:  RRCF   26,F
+04C6:  MOVLW  3F
+04C8:  ANDWF  26,F
+....................    b=a+b; 
+04CA:  MOVF   26,W
+04CC:  ADDWF  27,F
+....................    if(c_n*10+dv_n%4==0) // nam nhuan 
+04CE:  MOVF   14,W
+04D0:  MULLW  0A
+04D2:  MOVFF  FF3,28
+04D6:  MOVF   15,W
+04D8:  ANDLW  03
+04DA:  ADDWF  28,W
+04DC:  BNZ   04EE
+....................    { 
+....................       if(c_t*10+dv_t>=3) 
+04DE:  MOVF   12,W
+04E0:  MULLW  0A
+04E2:  MOVF   FF3,W
+04E4:  ADDWF  13,W
+04E6:  SUBLW  02
+04E8:  BC    04EC
+....................       { 
+....................          b++; 
+04EA:  INCF   27,F
+....................       } 
+....................       b--; 
+04EC:  DECF   27,F
+....................    } 
+....................    b=d_thang[c_t*10+dv_t]+b; 
+04EE:  MOVF   12,W
+04F0:  MULLW  0A
+04F2:  MOVF   FF3,W
+04F4:  ADDWF  13,W
+04F6:  CLRF   03
+04F8:  RCALL  0004
+04FA:  ADDWF  27,F
+....................    a=c_d*10+dv_d+b; 
+04FC:  MOVF   10,W
+04FE:  MULLW  0A
+0500:  MOVF   FF3,W
+0502:  ADDWF  11,W
+0504:  ADDWF  27,W
+0506:  MOVWF  26
+....................    a=a%7; 
+0508:  MOVFF  26,28
+050C:  MOVLW  07
+050E:  MOVWF  29
+0510:  RCALL  0482
+0512:  MOVFF  00,26
+....................    thu=a+2; 
+0516:  MOVLW  02
+0518:  ADDWF  26,W
+051A:  MOVWF  0F
+051C:  RETURN 0
+.................... } 
+.................... //========================================  
+.................... void ReadRTC(int8 * buff) // doc du lieu tu 1307 
+.................... { 
+....................    i2c_Start(); // Lenh bat dau i2c   
+*
+02EE:  BSF    F94.6
+02F0:  MOVLW  02
+02F2:  MOVWF  00
+02F4:  DECFSZ 00,F
+02F6:  BRA    02F4
+02F8:  BSF    F94.7
+02FA:  MOVLW  02
+02FC:  MOVWF  00
+02FE:  DECFSZ 00,F
+0300:  BRA    02FE
+0302:  BCF    F8B.6
+0304:  BCF    F94.6
+0306:  MOVLW  02
+0308:  MOVWF  00
+030A:  DECFSZ 00,F
+030C:  BRA    030A
+030E:  BCF    F8B.7
+0310:  BCF    F94.7
+....................    i2c_Write(0xD0); // ghi ma ghi vào DS1307 
+0312:  MOVLW  D0
+0314:  MOVWF  29
+0316:  RCALL  010A
+....................    i2c_Write(0x00); // Ghi dia chi 0 vao DS 
+0318:  CLRF   29
+031A:  RCALL  010A
+....................    i2c_Start(); // Lenh restart i2c 
+031C:  BSF    F94.6
+031E:  MOVLW  02
+0320:  MOVWF  00
+0322:  DECFSZ 00,F
+0324:  BRA    0322
+0326:  BSF    F94.7
+0328:  MOVLW  02
+032A:  MOVWF  00
+032C:  DECFSZ 00,F
+032E:  BRA    032C
+0330:  BTFSS  F82.7
+0332:  BRA    0330
+0334:  BCF    F8B.6
+0336:  BCF    F94.6
+0338:  MOVLW  02
+033A:  MOVWF  00
+033C:  DECFSZ 00,F
+033E:  BRA    033C
+0340:  BCF    F8B.7
+0342:  BCF    F94.7
+....................    i2c_Write(0xD1); // chi ma doc vao DS 
+0344:  MOVLW  D1
+0346:  MOVWF  29
+0348:  RCALL  010A
+....................    *(buff+0)=i2c_Read(1); // Doc giay voi bit thua nhan (ACK) de dia chi tang tu dong 
+034A:  MOVFF  27,03
+034E:  MOVFF  26,FE9
+0352:  MOVFF  27,FEA
+0356:  MOVLW  01
+0358:  MOVWF  00
+035A:  RCALL  0176
+035C:  MOVFF  01,FEF
+....................    *(buff+1)=i2c_Read(1); // doc phut 
+0360:  MOVLW  01
+0362:  ADDWF  26,W
+0364:  MOVWF  01
+0366:  MOVLW  00
+0368:  ADDWFC 27,W
+036A:  MOVWF  03
+036C:  MOVFF  01,FE9
+0370:  MOVWF  FEA
+0372:  MOVLW  01
+0374:  MOVWF  00
+0376:  RCALL  0176
+0378:  MOVFF  01,FEF
+....................    *(buff+2)=i2c_Read(1); // doc gio                                        
+037C:  MOVLW  02
+037E:  ADDWF  26,W
+0380:  MOVWF  01
+0382:  MOVLW  00
+0384:  ADDWFC 27,W
+0386:  MOVWF  03
+0388:  MOVFF  01,FE9
+038C:  MOVWF  FEA
+038E:  MOVLW  01
+0390:  MOVWF  00
+0392:  RCALL  0176
+0394:  MOVFF  01,FEF
+....................    *(buff+3)=i2c_Read(1); // doc thu 
+0398:  MOVLW  03
+039A:  ADDWF  26,W
+039C:  MOVWF  01
+039E:  MOVLW  00
+03A0:  ADDWFC 27,W
+03A2:  MOVWF  03
+03A4:  MOVFF  01,FE9
+03A8:  MOVWF  FEA
+03AA:  MOVLW  01
+03AC:  MOVWF  00
+03AE:  RCALL  0176
+03B0:  MOVFF  01,FEF
+....................    *(buff+4)=i2c_Read(1); // doc ngay 
+03B4:  MOVLW  04
+03B6:  ADDWF  26,W
+03B8:  MOVWF  01
+03BA:  MOVLW  00
+03BC:  ADDWFC 27,W
+03BE:  MOVWF  03
+03C0:  MOVFF  01,FE9
+03C4:  MOVWF  FEA
+03C6:  MOVLW  01
+03C8:  MOVWF  00
+03CA:  RCALL  0176
+03CC:  MOVFF  01,FEF
+....................    *(buff+5)=i2c_Read(1); // doc thang 
+03D0:  MOVLW  05
+03D2:  ADDWF  26,W
+03D4:  MOVWF  01
+03D6:  MOVLW  00
+03D8:  ADDWFC 27,W
+03DA:  MOVWF  03
+03DC:  MOVFF  01,FE9
+03E0:  MOVWF  FEA
+03E2:  MOVLW  01
+03E4:  MOVWF  00
+03E6:  RCALL  0176
+03E8:  MOVFF  01,FEF
+....................    *(buff+6)=i2c_Read(0); // doc nam khong bit thua nhan de ket thuc viec doc 
+03EC:  MOVLW  06
+03EE:  ADDWF  26,W
+03F0:  MOVWF  01
+03F2:  MOVLW  00
+03F4:  ADDWFC 27,W
+03F6:  MOVWF  03
+03F8:  MOVFF  01,FE9
+03FC:  MOVWF  FEA
+03FE:  CLRF   00
+0400:  RCALL  0176
+0402:  MOVFF  01,FEF
+....................    i2c_Stop(); // Lenh dung i2c 
+0406:  BCF    F94.6
+0408:  NOP   
+040A:  BSF    F94.7
+040C:  BTFSS  F82.7
+040E:  BRA    040C
+0410:  MOVLW  02
+0412:  MOVWF  00
+0414:  DECFSZ 00,F
+0416:  BRA    0414
+0418:  BRA    041A
+041A:  NOP   
+041C:  BSF    F94.6
+041E:  MOVLW  02
+0420:  MOVWF  00
+0422:  DECFSZ 00,F
+0424:  BRA    0422
+0426:  RETURN 0
+.................... } 
+.................... //========================================  
+.................... void WriteRTC(int8 *buff) // ghi du lieu vao 1307 
+.................... { 
+....................    i2c_Start(); // lenh bat dau i2c 
+*
+0D44:  BSF    F94.6
+0D46:  MOVLW  02
+0D48:  MOVWF  00
+0D4A:  DECFSZ 00,F
+0D4C:  BRA    0D4A
+0D4E:  BSF    F94.7
+0D50:  MOVLW  02
+0D52:  MOVWF  00
+0D54:  DECFSZ 00,F
+0D56:  BRA    0D54
+0D58:  BCF    F8B.6
+0D5A:  BCF    F94.6
+0D5C:  MOVLW  02
+0D5E:  MOVWF  00
+0D60:  DECFSZ 00,F
+0D62:  BRA    0D60
+0D64:  BCF    F8B.7
+0D66:  BCF    F94.7
+....................    i2c_Write(0xD0); // ghi ma ghi vao DS 
+0D68:  MOVLW  D0
+0D6A:  MOVWF  29
+0D6C:  CALL   010A
+....................    i2c_Write(0x00); // nap dia chi ban dau vao DS 
+0D70:  CLRF   29
+0D72:  CALL   010A
+....................    i2c_Write(*(buff+0)); // ghi giay 
+0D76:  MOVFF  27,03
+0D7A:  MOVFF  26,FE9
+0D7E:  MOVFF  27,FEA
+0D82:  MOVFF  FEF,29
+0D86:  CALL   010A
+....................    i2c_Write(*(buff+1)); // ghi phut 
+0D8A:  MOVLW  01
+0D8C:  ADDWF  26,W
+0D8E:  MOVWF  01
+0D90:  MOVLW  00
+0D92:  ADDWFC 27,W
+0D94:  MOVWF  03
+0D96:  MOVFF  01,FE9
+0D9A:  MOVWF  FEA
+0D9C:  MOVFF  FEF,29
+0DA0:  CALL   010A
+....................    i2c_Write(*(buff+2)); // ghi gio 
+0DA4:  MOVLW  02
+0DA6:  ADDWF  26,W
+0DA8:  MOVWF  01
+0DAA:  MOVLW  00
+0DAC:  ADDWFC 27,W
+0DAE:  MOVWF  03
+0DB0:  MOVFF  01,FE9
+0DB4:  MOVWF  FEA
+0DB6:  MOVFF  FEF,29
+0DBA:  CALL   010A
+....................    i2c_Write(*(buff+3)); // ghi thu 
+0DBE:  MOVLW  03
+0DC0:  ADDWF  26,W
+0DC2:  MOVWF  01
+0DC4:  MOVLW  00
+0DC6:  ADDWFC 27,W
+0DC8:  MOVWF  03
+0DCA:  MOVFF  01,FE9
+0DCE:  MOVWF  FEA
+0DD0:  MOVFF  FEF,29
+0DD4:  CALL   010A
+....................    i2c_Write(*(buff+4)); // ghi ngay 
+0DD8:  MOVLW  04
+0DDA:  ADDWF  26,W
+0DDC:  MOVWF  01
+0DDE:  MOVLW  00
+0DE0:  ADDWFC 27,W
+0DE2:  MOVWF  03
+0DE4:  MOVFF  01,FE9
+0DE8:  MOVWF  FEA
+0DEA:  MOVFF  FEF,29
+0DEE:  CALL   010A
+....................    i2c_Write(*(buff+5)); // ghi thang 
+0DF2:  MOVLW  05
+0DF4:  ADDWF  26,W
+0DF6:  MOVWF  01
+0DF8:  MOVLW  00
+0DFA:  ADDWFC 27,W
+0DFC:  MOVWF  03
+0DFE:  MOVFF  01,FE9
+0E02:  MOVWF  FEA
+0E04:  MOVFF  FEF,29
+0E08:  CALL   010A
+....................    i2c_Write(*(buff+6)); // ghi nam 
+0E0C:  MOVLW  06
+0E0E:  ADDWF  26,W
+0E10:  MOVWF  01
+0E12:  MOVLW  00
+0E14:  ADDWFC 27,W
+0E16:  MOVWF  03
+0E18:  MOVFF  01,FE9
+0E1C:  MOVWF  FEA
+0E1E:  MOVFF  FEF,29
+0E22:  CALL   010A
+....................    i2c_Stop(); // lenh dung i2c 
+0E26:  BCF    F94.6
+0E28:  NOP   
+0E2A:  BSF    F94.7
+0E2C:  BTFSS  F82.7
+0E2E:  BRA    0E2C
+0E30:  MOVLW  02
+0E32:  MOVWF  00
+0E34:  DECFSZ 00,F
+0E36:  BRA    0E34
+0E38:  BRA    0E3A
+0E3A:  NOP   
+0E3C:  BSF    F94.6
+0E3E:  MOVLW  02
+0E40:  MOVWF  00
+0E42:  DECFSZ 00,F
+0E44:  BRA    0E42
+0E46:  GOTO   11DA (RETURN)
+.................... }  
+.................... //======================================== 
+.................... void rtc_init(void) // khoi tao cho ds1307  
+.................... {   
+....................    int8 a; // byte luu tam gia tri o nho 0 cua ds 
+....................    i2c_start(); 
+*
+01DC:  BSF    F94.6
+01DE:  MOVLW  02
+01E0:  MOVWF  00
+01E2:  DECFSZ 00,F
+01E4:  BRA    01E2
+01E6:  BSF    F94.7
+01E8:  MOVLW  02
+01EA:  MOVWF  00
+01EC:  DECFSZ 00,F
+01EE:  BRA    01EC
+01F0:  BCF    F8B.6
+01F2:  BCF    F94.6
+01F4:  MOVLW  02
+01F6:  MOVWF  00
+01F8:  DECFSZ 00,F
+01FA:  BRA    01F8
+01FC:  BCF    F8B.7
+01FE:  BCF    F94.7
+....................    i2c_write(0xD0); // ghi vao ds1307 chieu ghi 
+0200:  MOVLW  D0
+0202:  MOVWF  29
+0204:  RCALL  010A
+....................    i2c_write(0); // ghi dia chi can doc 
+0206:  CLRF   29
+0208:  RCALL  010A
+....................    i2c_start(); // start bit i2c  
+020A:  BSF    F94.6
+020C:  MOVLW  02
+020E:  MOVWF  00
+0210:  DECFSZ 00,F
+0212:  BRA    0210
+0214:  BSF    F94.7
+0216:  MOVLW  02
+0218:  MOVWF  00
+021A:  DECFSZ 00,F
+021C:  BRA    021A
+021E:  BTFSS  F82.7
+0220:  BRA    021E
+0222:  BCF    F8B.6
+0224:  BCF    F94.6
+0226:  MOVLW  02
+0228:  MOVWF  00
+022A:  DECFSZ 00,F
+022C:  BRA    022A
+022E:  BCF    F8B.7
+0230:  BCF    F94.7
+....................    i2c_write(0xD1); // ghi vao ds1307 chieu doc 
+0232:  MOVLW  D1
+0234:  MOVWF  29
+0236:  RCALL  010A
+....................    a = i2c_read(0); 
+0238:  CLRF   00
+023A:  RCALL  0176
+023C:  MOVFF  01,23
+....................    i2c_stop(); 
+0240:  BCF    F94.6
+0242:  NOP   
+0244:  BSF    F94.7
+0246:  BTFSS  F82.7
+0248:  BRA    0246
+024A:  MOVLW  02
+024C:  MOVWF  00
+024E:  DECFSZ 00,F
+0250:  BRA    024E
+0252:  BRA    0254
+0254:  NOP   
+0256:  BSF    F94.6
+0258:  MOVLW  02
+025A:  MOVWF  00
+025C:  DECFSZ 00,F
+025E:  BRA    025C
+....................    if ((a&0x80)!=0)                                   
+0260:  MOVF   23,W
+0262:  ANDLW  80
+0264:  BZ    02BA
+....................    { 
+....................       a&=0x7f; 
+0266:  BCF    23.7
+....................       i2c_start();          
+0268:  BSF    F94.6
+026A:  MOVLW  02
+026C:  MOVWF  00
+026E:  DECFSZ 00,F
+0270:  BRA    026E
+0272:  BSF    F94.7
+0274:  MOVLW  02
+0276:  MOVWF  00
+0278:  DECFSZ 00,F
+027A:  BRA    0278
+027C:  BCF    F8B.6
+027E:  BCF    F94.6
+0280:  MOVLW  02
+0282:  MOVWF  00
+0284:  DECFSZ 00,F
+0286:  BRA    0284
+0288:  BCF    F8B.7
+028A:  BCF    F94.7
+....................       i2c_write(0); // ghi vao ds1307 chieu ghi 
+028C:  CLRF   29
+028E:  RCALL  010A
+....................       i2c_write(0); // ghi dia chi can doc 
+0290:  CLRF   29
+0292:  RCALL  010A
+....................       i2c_write(a); //  
+0294:  MOVFF  23,29
+0298:  RCALL  010A
+....................       i2c_stop();    
+029A:  BCF    F94.6
+029C:  NOP   
+029E:  BSF    F94.7
+02A0:  BTFSS  F82.7
+02A2:  BRA    02A0
+02A4:  MOVLW  02
+02A6:  MOVWF  00
+02A8:  DECFSZ 00,F
+02AA:  BRA    02A8
+02AC:  BRA    02AE
+02AE:  NOP   
+02B0:  BSF    F94.6
+02B2:  MOVLW  02
+02B4:  MOVWF  00
+02B6:  DECFSZ 00,F
+02B8:  BRA    02B6
+....................    }   
+02BA:  GOTO   1250 (RETURN)
+.................... } 
+....................  
+
+Configuration Fuses:
+   Word  1: 4C00   PLL1 CPUDIV1 NOUSBDIV HS FCMEN NOIESO
+   Word  2: 1E3E   PUT BROWNOUT BORV21 VREGEN NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 00A1   STVREN NOLVP ICSP2 NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

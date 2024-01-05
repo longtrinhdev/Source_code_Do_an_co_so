@@ -1,0 +1,197 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     lan_doc_ds
+005-006 thoi_gian_tre_ds
+007-008 gia_tri_ds
+009     c_g
+00A     dv_g
+00B     c_p
+00C     dv_p
+00D     c_h
+00E     dv_h
+00F     thu
+010     c_d
+011     dv_d
+012     c_t
+013     dv_t
+014     c_n
+015     dv_n
+016-01C mang_tg_rtc
+01D-020 nhiet_do
+021-022 @sprintf_string
+023     LCD_SetPosition.cX
+023     rtc_init.a
+023     ds1820_read.ket_qua
+023     chinh_gio.mode
+023     MAIN.@SCRATCH1
+023     @PSTRINGC_633.@SCRATCH1
+024     chinh_gio.i
+024     ds1820_read.temp1
+024     @PSTRINGC_633.@SCRATCH2
+024     rtc_init.@SCRATCH1
+025     ds1820_read.temp2
+025     chinh_gio.t
+026     hienthi1.m
+026-027 WriteRTC.buff
+026     tinh_thu.a
+026-027 ds1820_read.temp3
+026-027 ReadRTC.buff
+026     chinh_gio.@SCRATCH1
+027-02A @PRINTF_L32D_633FPFPF.P1
+027     tinh_thu.b
+027     hienthi1.@SCRATCH1
+028     @DIV88.P1
+028-02B ds1820_read.result
+028     tinh_thu.@SCRATCH1
+028     ReadRTC.@SCRATCH1
+028     WriteRTC.@SCRATCH1
+029     @DIV88.P1
+029     @I2C_WRITE_1.P2
+029     ReadRTC.@SCRATCH2
+02A     @I2C_READ_1.P1
+02A     @DIV88.@SCRATCH1
+02B     @PRINTF_L32D_633FPFPF.P1
+02B     @I2C_READ_1.@SCRATCH1
+02C     doc_1wire.dem
+02C     ghi_1wire.data
+02C-02D @ITOF.P1
+02C-02F @SFTOI.P2
+02C-02F @DIVFF.P3
+02C     @I2C_READ_1.@SCRATCH2
+02C     onewire_reset.@SCRATCH1
+02C     @PRINTF_L32D_633FPFPF.@SCRATCH1
+02D     doc_1wire.dulieu
+02D     ghi_1wire.dem
+02D     @delay_us1.P1
+02D     @PRINTF_L32D_633FPFPF.@SCRATCH2
+02E     @PRINTF_L32D_633FPFPF.@SCRATCH3
+02F     @PRINTF_L32D_633FPFPF.@SCRATCH4
+030-033 @DIVFF.P1
+030     @PRINTF_L32D_633FPFPF.@SCRATCH5
+031     @PRINTF_L32D_633FPFPF.@SCRATCH6
+032     @PRINTF_L32D_633FPFPF.@SCRATCH7
+033     @PRINTF_L32D_633FPFPF.@SCRATCH8
+034     LCD_PutChar.cX
+034-037 @DIV3232.P1
+034-037 @FTOSD.P2
+034-037 @MULFF.P3
+034     @DIVFF.@SCRATCH1
+035     LCD_PutCmd.cX
+035     @DIVFF.@SCRATCH2
+036     @delay_ms1.P1
+036     LCD_SetData.cX
+036     @DIVFF.@SCRATCH3
+037     @DIVFF.@SCRATCH4
+038-03B @MULFF.P1
+038-03B @DIV3232.P2
+038     @DIVFF.@SCRATCH5
+038     @FTOSD.@SCRATCH1
+039     @DIVFF.@SCRATCH6
+03C     @MULFF.@SCRATCH1
+03C     @DIV3232.@SCRATCH1
+03D     @MULFF.@SCRATCH2
+03D     @DIV3232.@SCRATCH2
+03E     @MULFF.@SCRATCH3
+03E     @DIV3232.@SCRATCH3
+03F     @DIV3232.@SCRATCH4
+040     @DIV3232.@SCRATCH5
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  d_thang.call
+000014  d_thang.data
+000022  @const735.call
+000030  @const740.call
+000042  LCD_SetData
+000074  @delay_ms1
+00009C  LCD_PulseEnable
+0000B6  LCD_PutCmd
+0000CC  LCD_Init
+00010A  @I2C_WRITE_1
+000176  @I2C_READ_1
+0001DC  rtc_init
+0002BE  LCD_PutChar
+0002CE  @PSTRINGC_633
+0002EE  ReadRTC
+000428  convert_bcd
+000482  @DIV88
+0004AA  tinh_thu
+00051E  @MULFF
+000610  @FTOSD
+000650  @DIV3232
+0006DE  @PRINTF_L32D_633FPFPF
+000858  hienthi1
+0009FA  @delay_us1
+000A14  onewire_reset
+000A34  ghi_1wire
+000A60  doc_1wire
+000A90  @ITOF
+000AC6  @DIVFF
+000C20  @SFTOI
+000C5A  ds1820_read
+000D44  WriteRTC
+000E4A  chinh_gio
+0011DE  @goto17904
+001204  @goto17948
+00122A  MAIN
+00122A  @cinit1
+001244  @cinit2
+
+Project Directory:
+    C:\Users\Admin\Desktop\New_file\Code_CCS\
+
+Project Files:
+    Dong ho LCD Nhiet do.c                                  [07-Dec-23 12:04  CRC=1115F4EB]
+    ..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [22-Oct-15 10:31  CRC=A89B282E]
+    ..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD 4 bit.c [13-Nov-17 01:00  CRC=1023C04A]
+    ..\..\..\..\..\Program Files (x86)\PICC\Drivers\stddef.h [05-Sep-14 11:47  CRC=897CEC6C]
+    1wire.c                                                 [07-Dec-23 10:28  CRC=A20261CA]
+    ds1820.c                                                [22-Oct-23 15:39  CRC=C56BB733]
+
+Source signature=802B99FF
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=C22E
+
+Units:
+    Dong ho LCD Nhiet do (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   Dong ho LCD Nhiet do.xsym
+    Errors:      Dong ho LCD Nhiet do.err
+    Ext Symbols: Dong ho LCD Nhiet do.esym
+    INHX32:      Dong ho LCD Nhiet do.hex
+    Symbols:     Dong ho LCD Nhiet do.sym
+    List:        Dong ho LCD Nhiet do.lst
+    Debug/COFF:  Dong ho LCD Nhiet do.cof
+    Project:     Dong ho LCD Nhiet do.ccspjt
+    Call Tree:   Dong ho LCD Nhiet do.tre
+    Statistics:  Dong ho LCD Nhiet do.STA
